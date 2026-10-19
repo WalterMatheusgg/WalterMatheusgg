@@ -23,16 +23,6 @@
   <br/>
 
   <img
-    src="https://komarev.com/ghpvc/?username=WalterMatheusgg&label=VISITANTES&color=6C63FF&style=for-the-badge"
-    alt="Visualizações do perfil"
-  />
-
-  <img
-    src="https://img.shields.io/github/followers/WalterMatheusgg?label=SEGUIDORES&style=for-the-badge&color=00D9FF&labelColor=0D1117"
-    alt="Seguidores"
-  />
-
-  <img
     src="https://img.shields.io/badge/OPEN%20TO%20WORK-00C853?style=for-the-badge&logo=github&logoColor=white"
     alt="Disponível para oportunidades"
   />
