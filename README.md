@@ -90,10 +90,8 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" />
-  <img width="100%" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" alt="Uma cobrinha percorre o calendário contínuo de 2024 a 2026, come quadrados inteiros e cresce conforme avança" />
+  <img width="82%" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" alt="Cobrinha animada comendo aleatoriamente somente quadrados de dias com contribuições" />
 </picture>
-
-<sub>2024–2026 em um único calendário animado. Os quadrados desaparecem completamente ao serem comidos.</sub>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:0D1117,50:263C75,100:00B4D8" alt="Rodapé em forma de onda" />
 
