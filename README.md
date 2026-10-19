@@ -58,6 +58,12 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 
 ---
 
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/dev-flow.svg" width="100%" alt="Animação: uma ideia se transforma em código Java e Angular e chega a um aplicativo pronto" />
+
+</div>
+
 ## 🚀 Projetos em destaque
 
 <table>
