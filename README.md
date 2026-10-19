@@ -94,7 +94,7 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" />
-  <img width="82%" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" alt="Cobrinha animada percorrendo contribuições reais do GitHub entre 2024 e 2026" />
+  <img width="70%" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" alt="Cobrinha compacta comendo contribuições reais por rotas variadas e voltando ao canto entre rodadas" />
 </picture>
 
 <sub>Construindo hoje o que quero melhorar amanhã. 🚀</sub>
