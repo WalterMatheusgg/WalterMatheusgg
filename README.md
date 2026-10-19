@@ -201,7 +201,7 @@ Automação de rastreamento logístico e atualização de informações de entre
 
 | Projeto | Tecnologias | O que demonstra |
 |---|---|---|
-| [**Sistema de Gestão Escolar**](https://github.com/WalterMatheusgg/Sistema_de_Gestao_Escolar) | Python · Tkinter · SQLite | Interface desktop, modelagem e persistência relacional |
+| [**Biblioteca Digital — Library Service**](https://github.com/WalterMatheusgg/library-service/tree/develop) | Python · Django · SQLite · Bootstrap | CRUD de catálogo, autenticação e controle de empréstimos |\n| [**Sistema de Gestão Escolar**](https://github.com/WalterMatheusgg/Sistema_de_Gestao_Escolar) | Python · Tkinter · SQLite | Interface desktop, modelagem e persistência relacional |
 | [**Android — Catálogo e Agendamento**](https://github.com/WalterMatheusgg/Aplicativo_Android_de_Cadastro_e_Autenticao) | Kotlin · Android · SQLite | Telas mobile, navegação e banco local em protótipo |
 | [**Movie API**](https://github.com/WalterMatheusgg/py-movie-api) | Django · Django REST Framework | CRUD REST e serializers em projeto de estudo |
 | [**Taxi Service — Busca e Testes**](https://github.com/WalterMatheusgg/py-taxi-service-search-and-tests) | Django · SQLite | Views, consultas e testes em aplicação educacional |
