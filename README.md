@@ -153,20 +153,6 @@ Tenho experiência com APIs REST, bancos de dados relacionais, arquitetura de ap
 
 ---
 
-## 📈 Gráfico de Atividade
-
-<div align="center">
-
-  <img
-    width="100%"
-    src="https://github-readme-activity-graph.vercel.app/graph?username=WalterMatheusgg&bg_color=0D1117&color=00D9FF&line=6C63FF&point=FFFFFF&area=true&area_color=6C63FF&hide_border=true&custom_title=Meu%20Gr%C3%A1fico%20de%20Contribui%C3%A7%C3%B5es"
-    alt="GitHub Activity Graph"
-  />
-
-</div>
-
----
-
 ## 🐍 Minhas Contribuições Ganharam Vida!
 
 <div align="center">
