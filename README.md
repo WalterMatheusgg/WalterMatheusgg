@@ -135,41 +135,66 @@ Tenho experiência com arquitetura em camadas, bancos de dados relacionais, test
 
 ---
 
-## Projetos em Destaque
+## 🚀 Projetos em Destaque
 
-### Sistema de Gestão Integrada
+Projetos selecionados para demonstrar **desenvolvimento Full Stack, APIs REST, manutenção de sistemas corporativos e integração entre serviços**.
 
-![Java](https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
+### 🏢 [NEXUS CRM — Sistema de Gestão Integrada](https://github.com/WalterMatheusgg/NEXUS)
+
+![Java](https://img.shields.io/badge/Java-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-4-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-22-DD0031?style=flat-square&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white)
 
-Aplicação Full Stack voltada à gestão de chamados e processos corporativos, com foco na organização das informações e na integração entre frontend e backend.
+**Plataforma Full Stack de gestão empresarial** com clientes, chamados, processos, tarefas e relacionamento comercial, integrando uma interface Angular a uma API Java com persistência Oracle.
 
-**Principais componentes técnicos:**
+**Destaques técnicos:**
+- API REST com Java 21, Spring Boot 4, validação, regras de negócio e persistência JPA/Hibernate.
+- Monólito modular, separação de responsabilidades e isolamento de dados por organização.
+- Login, sessões, permissões e proteção de endpoints com Spring Security.
+- Interface Angular 22 + Material, integração HTTP e indicadores alimentados pela API.
+- Migrações Flyway, testes automatizados, Docker Compose e documentação OpenAPI.
 
-- Backend desenvolvido com Java 21 e Spring Boot.
-- API REST organizada em camadas.
-- Regras de negócio e persistência em Oracle.
-- Interfaces desenvolvidas com Angular e TypeScript.
-- Documentação de endpoints com Swagger / OpenAPI.
-- Estruturação de testes automatizados.
+📘 **[Ver projeto, arquitetura e instruções de execução →](https://github.com/WalterMatheusgg/NEXUS)**
 
-### SIAUDI — Sistema de Auditoria
+### 🔎 [SIAUDI — Sistema de Auditoria Interna](https://github.com/WalterMatheusgg/Sistema_de_Auditoria-SIAUDI)
 
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Yii](https://img.shields.io/badge/Yii-Legado-0066A1?style=flat-square)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Apache](https://img.shields.io/badge/Apache-D22128?style=flat-square&logo=apache&logoColor=white)
+
+**Repositório de manutenção e documentação de um sistema institucional de auditoria**, com uma base legada em PHP/Yii e PostgreSQL.
+
+**Destaques técnicos:**
+- Leitura de sistemas legados com estrutura MVC e regras institucionais.
+- Integração relacional com PostgreSQL e configuração de ambiente Apache/PHP.
+- Análise de compatibilidade e necessidades de evolução de aplicações existentes.
+- Documentação de instalação, operação e pontos de atenção de segurança.
+
+> O SIAUDI é um projeto original de software público, com créditos e licenças preservados. Este repositório não reivindica a criação original da aplicação.
+
+📘 **[Ver repositório e documentação →](https://github.com/WalterMatheusgg/Sistema_de_Auditoria-SIAUDI)**
+
+### 🛒 [E-commerce — Backend API](https://github.com/WalterMatheusgg/ecomerce)
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 
-Experiência no desenvolvimento e evolução de um sistema institucional de auditoria.
+API REST para gestão de categorias e produtos, com arquitetura **routes → controllers → services → repositories**, persistência Prisma, validação Zod e testes de integração com banco PostgreSQL isolado.
 
-**Atividades desenvolvidas:**
+📘 **[Ver implementação e testes →](https://github.com/WalterMatheusgg/ecomerce)**
 
-- Desenvolvimento e manutenção de funcionalidades.
-- Implementação e análise de regras de negócio.
-- Integração com banco de dados relacional.
-- Investigação e resolução de problemas técnicos.
+### 🚚 [Jamef → Ploomes — Integração de APIs](https://github.com/WalterMatheusgg/Jamef_Ploomes_Tracking)
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![REST API](https://img.shields.io/badge/REST-API-0F766E?style=flat-square)
+
+Automação de rastreamento logístico e atualização de informações de entrega entre Jamef e Ploomes, com transformação de eventos, logs, relatórios CSV e modo de simulação.
+
+📘 **[Ver integração e documentação →](https://github.com/WalterMatheusgg/Jamef_Ploomes_Tracking)**
 
 ---
 
