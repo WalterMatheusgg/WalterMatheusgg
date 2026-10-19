@@ -87,27 +87,13 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 
 <div align="center">
 
-<p><strong>2024 · 2025 · 2026</strong></p>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" />
-  <img width="100%" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" alt="Três cobrinhas animadas mostrando contribuições reais dos anos 2024, 2025 e 2026" />
+  <img width="100%" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" alt="Uma cobrinha percorre o calendário contínuo de 2024 a 2026, come quadrados inteiros e cresce conforme avança" />
 </picture>
 
-<sub>Histórico de contribuições reais do GitHub. Pontinhos luminosos extras são apenas decorativos.</sub>
-
-<details>
-<summary>🐍 Ver também a cobrinha clássica do último ano</summary>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/github-snake.svg" />
-  <img width="100%" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/github-snake.svg" alt="Cobrinha animada percorrendo minhas contribuições e comendo pontinhos extras decorativos" />
-</picture>
-
-</details>
-
+<sub>2024–2026 em um único calendário animado. Os quadrados desaparecem completamente ao serem comidos.</sub>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:0D1117,50:263C75,100:00B4D8" alt="Rodapé em forma de onda" />
 
