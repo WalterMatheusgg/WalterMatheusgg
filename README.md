@@ -28,7 +28,7 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 
 ---
 
-## 🧰 Tech Stack
+## 🧰 Stack
 
 <div align="center">
 
