@@ -58,14 +58,6 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 
 ---
 
-## 🛠️ Como transformo uma ideia em software
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/dev-flow.svg" width="100%" alt="Animação: uma ideia se transforma em código Java e Angular e chega a um aplicativo pronto" />
-
-</div>
-
 ## 🚀 Projetos em destaque
 
 <table>
@@ -88,16 +80,6 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 <div align="center">
 
 <a href="https://github.com/WalterMatheusgg?tab=repositories"><img src="https://img.shields.io/badge/EXPLORAR_TODOS_OS_REPOSIT%C3%93RIOS-4B9CDB?style=for-the-badge&logo=github&logoColor=white" alt="Explorar todos os repositórios"/></a>
-
-</div>
-
----
-
-## 💻 Meu terminal de desenvolvimento
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/mini-terminal.svg" width="64%" alt="Mini-terminal animado: code --build future, architecture, Full Stack e entrega" />
 
 </div>
 
