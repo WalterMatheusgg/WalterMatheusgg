@@ -56,7 +56,7 @@ def github_calendar() -> dict[int, dict[str, int]]:
 
 
 def render(history: dict[int, dict[str, int]], dark: bool) -> str:
-    """One continuous 2024–2026 board; the snake grows on active days.
+    """One continuous 2024–2026 board; the snake grows with every tile it eats.
 
     Source is always GitHub GraphQL, never synthetic contributions. Every visited
     tile becomes transparent (the whole tile, not just a change of color).
@@ -128,7 +128,10 @@ def render(history: dict[int, dict[str, int]], dark: bool) -> str:
         if has_activity:
             active += 1
         travelled = i * step
-        body_length = min(travelled, (3 + active) * step)
+        # The snake grows with EVERY eaten tile, plus a little extra on active days.
+        # Fractional growth keeps a 3-year animation readable rather than covering the board.
+        growth_in_cells = 3 + i * 0.075 + active * 0.45
+        body_length = min(travelled, growth_in_cells * step)
         tail_start = travelled - body_length
         percent = i * 100 / (n - 1)
         head_animations.append(
@@ -149,10 +152,10 @@ def render(history: dict[int, dict[str, int]], dark: bool) -> str:
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 420" '
         'width="930" height="420" role="img" '
         'aria-label="Uma única cobrinha percorre as contribuições de 2024, 2025 e 2026; '
-        'os quadrados desaparecem e a cobra cresce nos dias de atividade">',
+        'os quadrados desaparecem e a cobra cresce conforme come">',
         '<title>Minha jornada no código · 2024 — 2026</title>',
         '<desc>Calendário contínuo de contribuições reais. A cobra come cada quadrado inteiro, '
-        'e seu corpo cresce quando encontra um dia com contribuições.</desc>',
+        'e seu corpo cresce conforme come os dias.</desc>',
         '<style>',
         *css,
         '</style>',
