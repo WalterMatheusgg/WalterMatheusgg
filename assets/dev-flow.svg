@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 118" width="900" height="118" role="img" aria-label="Animação do fluxo de desenvolvimento: ideia, backend, frontend e solução">
+  <title>Do conceito ao software</title>
+  <defs>
+    <linearGradient id="border" x1="0" x2="1">
+      <stop offset="0" stop-color="#00D9FF" stop-opacity=".25"/>
+      <stop offset=".52" stop-color="#777BFA" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#00D9FF" stop-opacity=".25"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" x2="1">
+      <stop offset="0" stop-color="#00D9FF"/>
+      <stop offset="1" stop-color="#8686FF"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .frame{fill:#0D1117;stroke:url(#border);stroke-width:1.6}
+    .node{fill:#131F32;stroke:#38516D;stroke-width:1.4}
+    .title{fill:#DCE9F5;font:600 16px system-ui,sans-serif;letter-spacing:.4px}
+    .caption{fill:#93A8C0;font:12px system-ui,sans-serif}
+    .track{fill:none;stroke:#2C5573;stroke-width:2;stroke-dasharray:5 8;animation:flow 7s linear infinite}
+    .spark{fill:#5FE5FF;filter:drop-shadow(0 0 5px #00D9FF);animation:beam 7s ease-in-out infinite}
+    .pulse{animation:pulse 2.4s ease-in-out infinite alternate}
+    @keyframes flow{to{stroke-dashoffset:-104}}
+    @keyframes beam{0%{transform:translateX(0);opacity:0}8%{opacity:1}92%{opacity:1}100%{transform:translateX(660px);opacity:0}}
+    @keyframes pulse{from{stroke:#31516D}to{stroke:#00BBDF}}
+    @media (prefers-reduced-motion:reduce){.track,.spark,.pulse{animation:none}.spark{opacity:0}}
+  </style>
+  <rect x="2" y="2" width="896" height="114" rx="18" class="frame"/>
+  <path d="M118 52 H783" class="track"/>
+  <rect x="20" y="23" width="190" height="58" rx="14" class="node pulse"/>
+  <rect x="243" y="23" width="190" height="58" rx="14" class="node pulse" style="animation-delay:-.6s"/>
+  <rect x="466" y="23" width="190" height="58" rx="14" class="node pulse" style="animation-delay:-1.2s"/>
+  <rect x="689" y="23" width="190" height="58" rx="14" class="node pulse" style="animation-delay:-1.8s"/>
+  <text x="115" y="47" text-anchor="middle" class="title">IDEIA</text>
+  <text x="115" y="66" text-anchor="middle" class="caption">Requisitos</text>
+  <text x="338" y="47" text-anchor="middle" class="title">BACKEND</text>
+  <text x="338" y="66" text-anchor="middle" class="caption">Java · Spring</text>
+  <text x="561" y="47" text-anchor="middle" class="title">FRONTEND</text>
+  <text x="561" y="66" text-anchor="middle" class="caption">Angular · TypeScript</text>
+  <text x="784" y="47" text-anchor="middle" class="title">SOLUÇÃO</text>
+  <text x="784" y="66" text-anchor="middle" class="caption">Software com propósito</text>
+  <circle cx="116" cy="92" r="4" fill="url(#glow)" class="spark"/>
+  <text x="450" y="102" text-anchor="middle" class="caption">Transformando requisitos em software</text>
+</svg>
