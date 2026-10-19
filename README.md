@@ -196,6 +196,29 @@ Automação de rastreamento logístico e atualização de informações de entre
 
 📘 **[Ver integração e documentação →](https://github.com/WalterMatheusgg/Jamef_Ploomes_Tracking)**
 
+
+### 📂 Outros projetos relevantes
+
+| Projeto | Tecnologias | O que demonstra |
+|---|---|---|
+| [**Sistema de Gestão Escolar**](https://github.com/WalterMatheusgg/Sistema_de_Gestao_Escolar) | Python · Tkinter · SQLite | Interface desktop, modelagem e persistência relacional |
+| [**Android — Catálogo e Agendamento**](https://github.com/WalterMatheusgg/Aplicativo_Android_de_Cadastro_e_Autenticao) | Kotlin · Android · SQLite | Telas mobile, navegação e banco local em protótipo |
+| [**Movie API**](https://github.com/WalterMatheusgg/py-movie-api) | Django · Django REST Framework | CRUD REST e serializers em projeto de estudo |
+| [**Taxi Service — Busca e Testes**](https://github.com/WalterMatheusgg/py-taxi-service-search-and-tests) | Django · SQLite | Views, consultas e testes em aplicação educacional |
+| [**Licits**](https://github.com/WalterMatheusgg/Licits) | Pacote ZIP | Projeto disponibilizado como arquivo; código ainda não navegável no GitHub |
+| [**Qubits**](https://github.com/WalterMatheusgg/Qubits) | Q# · Microsoft Quantum | Experimento introdutório com circuito quântico |
+
+<details>
+<summary><strong>🧩 Exercícios e fundamentos de programação</strong></summary>
+
+- [Exercícios Java](https://github.com/WalterMatheusgg/Projects_Java_Aleatorios) — Swing, lógica e manipulação de arquivos.
+- [Scripts Python](https://github.com/WalterMatheusgg/Projects_Py_Aleatorios) — Flask, Pygame, JSON/CSV e automação.
+- [Cadastro Acadêmico CLI](https://github.com/WalterMatheusgg/Sistema_Cadastro_test) — aplicação educacional em Python.
+
+</details>
+
+> **Critério de destaque:** os projetos são apresentados conforme seu estágio e código disponível. Protótipos, exercícios e sistemas legados não são descritos como produtos homologados.
+
 ---
 
 ## GitHub Analytics
