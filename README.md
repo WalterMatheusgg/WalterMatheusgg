@@ -212,7 +212,6 @@ Aplicação Full Stack para gestão de chamados e processos corporativos.
 - Documentação de APIs com Swagger.
 - Estruturação de testes automatizados.
 
-**🔗 Repositório:** [ADICIONAR LINK DO PROJETO]
 
 ### 🔐 SIAUDI — Sistema de Auditoria
 
@@ -220,15 +219,10 @@ Aplicação Full Stack para gestão de chamados e processos corporativos.
 
 Atuação no desenvolvimento e evolução de sistema institucional, incluindo manutenção de funcionalidades, regras de negócio e integração com banco de dados.
 
-**🔗 Repositório:** [ADICIONAR LINK, SE PÚBLICO]
-
-### 🚀 [NOME DO PRÓXIMO PROJETO]
 
 **[TECNOLOGIAS UTILIZADAS]**
 
 [DESCRIÇÃO CURTA E IMPACTANTE DO PROJETO]
-
-**🔗 Repositório:** [LINK DO REPOSITÓRIO]
 
 ---
 
