@@ -1,64 +1,69 @@
-<!--
-  Perfil oficial do GitHub | Walter Matheus
-  Imagens SVG armazenadas neste repositório; animações sem JavaScript.
-  A cobrinha histórica 2024–2026 é preservada exatamente como estava.
--->
+<!-- Walter Matheus | Desenvolvedor Full Stack | Java, Spring Boot e Angular -->
+
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/hero.svg" width="100%" alt="Walter Matheus — Full Stack Developer, banner animado com terminal" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:0D1117,50:263C75,100:00B4D8&text=Walter%20Matheus&fontColor=FFFFFF&fontSize=48&fontAlignY=38&animation=twinkling&desc=Full%20Stack%20Developer&descAlignY=62&descSize=21" alt="Walter Matheus — Full Stack Developer" />
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=2800&pause=950&color=60DDFC&center=true&vCenter=true&repeat=true&width=800&height=62&lines=Ol%C3%A1%2C+eu+sou+Walter+Matheus!+%F0%9F%91%8B;Java+21+%2B+Spring+Boot+%2B+Angular;Criando+APIs%2C+interfaces+e+integra%C3%A7%C3%B5es;Transformando+ideias+em+software+de+verdade" alt="Apresentação animada com foco em Java, Spring Boot e Angular" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3200&pause=1100&color=45C7E8&center=true&vCenter=true&repeat=true&width=730&height=60&lines=Java+21+%E2%80%A2+Spring+Boot+%E2%80%A2+Angular;Full+Stack+Development+%E2%80%A2+APIs+REST;Arquitetura+%E2%80%A2+Integra%C3%A7%C3%B5es+%E2%80%A2+Qualidade" alt="Animação com Java, Spring Boot, Angular e desenvolvimento Full Stack" />
 </a>
 
 <p>
   <a href="https://www.linkedin.com/in/walter504"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="mailto:waltermatheus688@gmail.com"><img src="https://img.shields.io/badge/Contato-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="E-mail"/></a>
-  <a href="https://github.com/WalterMatheusgg?tab=repositories"><img src="https://img.shields.io/badge/Meus_Projetos-24292F?style=for-the-badge&logo=github&logoColor=white" alt="Meus projetos"/></a>
+  <a href="mailto:waltermatheus688@gmail.com"><img src="https://img.shields.io/badge/E--mail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="E-mail"/></a>
+  <a href="https://github.com/WalterMatheusgg?tab=repositories"><img src="https://img.shields.io/badge/Repositórios-24292F?style=for-the-badge&logo=github&logoColor=white" alt="Repositórios"/></a>
 </p>
 
-<img src="https://komarev.com/ghpvc/?username=WalterMatheusgg&label=VISITAS+AO+PERFIL&color=0891B2&style=flat-square" alt="Visualizações do perfil"/>
+<img src="https://komarev.com/ghpvc/?username=WalterMatheusgg&label=Visitas+ao+perfil&color=0891B2&style=flat-square" alt="Visitas ao perfil" />
 
 </div>
 
-## 👋 Um pouco sobre mim
+---
 
-Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring Boot e Angular**. Gosto de resolver problemas reais com **APIs bem projetadas**, regras de negócio claras, integrações confiáveis e interfaces que fazem sentido para quem utiliza.
+## 👋 Sobre mim
 
-📍 **Brasília — DF, Brasil** · 🎯 **Interesse em oportunidades Full Stack e Backend Java**
+Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring Boot e Angular**. Gosto de transformar regras de negócio em aplicações bem estruturadas, integrando **backend, frontend e banco de dados**.
+
+📍 Brasília, DF · Interesse em oportunidades **Full Stack e Backend Java**.
+
+---
+
+## 🧰 Tech Stack
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/terminal.svg" width="100%" alt="Terminal estilizado animado com etapas do desenvolvimento de software"/>
-</div>
 
-## ⚡ Minha caixa de ferramentas
+### ⚙️ Backend
+<img src="https://skillicons.dev/icons?i=java,spring,python,nodejs,php&theme=dark" alt="Java, Spring, Python, Node.js e PHP" />
 
-<div align="center">
+`Java 17/21` · `Spring Boot` · `Spring Security` · `REST APIs` · `JPA/Hibernate`
 
-**☕ Backend & arquitetura**
-
-<img src="https://skillicons.dev/icons?i=java,spring,python,nodejs&theme=dark" alt="Java, Spring, Python e Node.js"/>
-
-`Java 17/21` · `Spring Boot` · `Spring Security` · `JPA/Hibernate` · `REST APIs`
-
-**🧩 Frontend & experiência**
-
-<img src="https://skillicons.dev/icons?i=angular,ts,react,html,css&theme=dark" alt="Angular, TypeScript, React, HTML e CSS"/>
+### 🎨 Frontend
+<img src="https://skillicons.dev/icons?i=angular,ts,react,html,css&theme=dark" alt="Angular, TypeScript, React, HTML e CSS" />
 
 `Angular` · `TypeScript` · `React` · `HTML5` · `CSS3`
 
-**🗃️ Dados, ferramentas & qualidade**
+### 🗄️ Bancos de dados
+<img src="https://skillicons.dev/icons?i=postgres,mysql,sqlite&theme=dark" alt="PostgreSQL, MySQL e SQLite" />
 
-<img src="https://skillicons.dev/icons?i=postgres,mysql,docker,git,github,linux,vscode,maven&theme=dark" alt="PostgreSQL, MySQL, Docker, Git, GitHub, Linux, VS Code e Maven"/>
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-64748B?style=flat-square)
 
-`Oracle` · `PostgreSQL` · `SQL` · `Docker` · `JUnit` · `Mockito` · `OpenAPI`
+### 🛠️ Ferramentas e qualidade
+<img src="https://skillicons.dev/icons?i=git,github,docker,linux,vscode,postman,maven&theme=dark" alt="Git, GitHub, Docker, Linux, VS Code, Postman e Maven" />
+
+`Git` · `Docker` · `Maven` · `JUnit` · `Mockito` · `OpenAPI`
 
 </div>
+
+---
 
 ## 🛠️ Como transformo uma ideia em software
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/dev-flow.svg" width="100%" alt="Pipeline animado: descoberta, backend, frontend e solução"/>
+
+<img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/dev-flow.svg" width="100%" alt="Animação: uma ideia se transforma em código Java e Angular e chega a um aplicativo pronto" />
+
 </div>
 
 ## 🚀 Projetos em destaque
@@ -86,19 +91,28 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 
 </div>
 
+---
+
+## 💻 Meu terminal de desenvolvimento
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/mini-terminal.svg" width="64%" alt="Mini-terminal animado: code --build future, architecture, Full Stack e entrega" />
+
+</div>
+
+---
+
 ## 🐍 Minha jornada no código
 
 <div align="center">
 
-<!-- Preservado: um único calendário de contribuições reais, 2024–2026, com a cobrinha original. -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" />
-  <img width="70%" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" alt="Cobrinha compacta comendo contribuições reais por rotas variadas e voltando ao canto entre rodadas" />
+  <img width="82%" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" alt="Cobrinha animada comendo aleatoriamente somente quadrados de dias com contribuições" />
 </picture>
 
-<sub>Construindo hoje o que quero melhorar amanhã. 🚀</sub>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:080D1B,45:263C75,100:00B4D8" alt="Rodapé animado"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:0D1117,50:263C75,100:00B4D8" alt="Rodapé em forma de onda" />
 
 </div>

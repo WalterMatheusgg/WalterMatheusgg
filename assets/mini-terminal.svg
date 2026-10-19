@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 231" width="560" height="231" role="img" aria-label="Mini-terminal animado com o comando code --build future e as etapas de design, desenvolvimento Full Stack e entrega">
+<title>Meu terminal — code --build future</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#182B47"/><stop offset="1" stop-color="#10182D"/></linearGradient>
+<linearGradient id="border"><stop stop-color="#46DFF5"/><stop offset=".52" stop-color="#AB96FF"/><stop offset="1" stop-color="#5FE8B9"/></linearGradient>
+</defs>
+<style>
+  .float{animation:float 4.5s ease-in-out infinite alternate}
+  .l1{animation:show1 7s linear infinite}
+  .l2{animation:show2 7s linear infinite}
+  .l3{animation:show3 7s linear infinite}
+  .cursor{animation:blink 1s steps(2,end) infinite}
+  .active{animation:pulse 2s ease-in-out infinite alternate}
+  @keyframes float{to{transform:translateY(-5px)}}
+  @keyframes show1{0%,9%{opacity:0}18%,94%{opacity:1}100%{opacity:0}}
+  @keyframes show2{0%,31%{opacity:0}42%,94%{opacity:1}100%{opacity:0}}
+  @keyframes show3{0%,53%{opacity:0}65%,94%{opacity:1}100%{opacity:0}}
+  @keyframes blink{50%{opacity:0}}
+  @keyframes pulse{to{opacity:.35}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.l1,.l2,.l3{opacity:1!important}}
+</style>
+<rect x="3" y="8" width="554" height="218" rx="17" fill="url(#bg)" stroke="url(#border)" stroke-opacity=".76" stroke-width="1.5"/>
+<rect x="3" y="8" width="554" height="35" rx="16" fill="#243653"/>
+<rect x="3" y="26" width="554" height="17" fill="#243653"/>
+<circle cx="24" cy="25" r="5" fill="#FF7C8D"/><circle cx="41" cy="25" r="5" fill="#FFD176"/><circle cx="58" cy="25" r="5" fill="#6AF0C0"/>
+<text x="92" y="30" font-family="Consolas,monospace" font-size="13" fill="#B2C5DD">walter@dev ~/workspace</text>
+<rect x="453" y="16" width="81" height="20" rx="10" fill="#16443E"/>
+<circle cx="467" cy="26" r="3.3" fill="#6FF2C6" class="active"/>
+<text x="478" y="30" font-family="Consolas,monospace" font-size="10" fill="#8BEAC9">ONLINE</text>
+<g font-family="Consolas,monospace" font-size="17">
+ <text x="30" y="80" fill="#65EED4">$</text><text x="53" y="80" fill="#DBEBFA">code --build future</text>
+ <g class="l1"><text x="32" y="117" fill="#A498FF">01</text><text x="75" y="117" fill="#DCE5F5">design(architecture)</text></g>
+ <g class="l2"><text x="32" y="149" fill="#A498FF">02</text><text x="75" y="149" fill="#DCE5F5">develop(fullStack)</text></g>
+ <g class="l3"><text x="32" y="181" fill="#A498FF">03</text><text x="75" y="181" fill="#76EEC8">deliver(value)</text></g>
+ <text x="32" y="212" fill="#63DFF6">&gt;_</text><rect x="74" y="197" width="10" height="17" rx="2" fill="#66EBD7" class="cursor"/>
+</g>
+</svg>

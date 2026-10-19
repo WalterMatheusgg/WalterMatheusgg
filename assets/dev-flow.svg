@@ -1,66 +1,158 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 292" width="1000" height="292" role="img" aria-label="Pipeline animado: concepção, backend Java, frontend Angular e entrega da solução">
-<title>Do problema à solução — pipeline de desenvolvimento</title>
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0A1428"/><stop offset=".5" stop-color="#111F3D"/><stop offset="1" stop-color="#11182C"/></linearGradient>
-<linearGradient id="edge"><stop stop-color="#47CFF2"/><stop offset=".52" stop-color="#9B7BFA"/><stop offset="1" stop-color="#55E7BB"/></linearGradient>
-<linearGradient id="bar"><stop stop-color="#56DFF7"/><stop offset="1" stop-color="#9279FF"/></linearGradient>
-<pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#89B8F9" stroke-opacity=".06"/></pattern>
-</defs>
-<style>
- .panel{fill:#172541;stroke:#426082;stroke-opacity:.9;stroke-width:1.2}
- .num{font:700 12px Consolas,monospace;fill:#9AB2CC}
- .head{font:700 18px Arial,sans-serif;fill:#F0F6FF;letter-spacing:.5px}
- .info{font:13px Arial,sans-serif;fill:#9CB4CD}
- .lane{stroke:#376480;stroke-width:2;stroke-dasharray:6 8;animation:road 4s linear infinite}
- .pulse{animation:pulse 2.8s ease-in-out infinite alternate}
- .ping{animation:pop 1.6s ease-in-out infinite alternate}
- .scan{animation:scan 5.6s ease-in-out infinite}
- .a{animation:ping1 4.5s linear infinite}
- .b{animation:ping2 4.5s linear infinite}
- .c{animation:ping3 4.5s linear infinite}
- @keyframes road{to{stroke-dashoffset:-88}}
- @keyframes pulse{to{stroke:#55E5F3;stroke-width:2.5}}
- @keyframes pop{to{opacity:.38}}
- @keyframes scan{0%,100%{opacity:.15}50%{opacity:1}}
- @keyframes ping1{0%,12%{opacity:0;transform:translateX(0)}17%{opacity:1}33%{opacity:0;transform:translateX(28px)}100%{opacity:0}}
- @keyframes ping2{0%,34%{opacity:0;transform:translateX(0)}40%{opacity:1}58%{opacity:0;transform:translateX(28px)}100%{opacity:0}}
- @keyframes ping3{0%,58%{opacity:0;transform:translateX(0)}64%{opacity:1}85%{opacity:0;transform:translateX(28px)}100%{opacity:0}}
- @media (prefers-reduced-motion:reduce){*{animation:none!important}}
-</style>
-<rect width="1000" height="292" rx="20" fill="url(#bg)"/><rect width="1000" height="292" rx="20" fill="url(#grid)"/>
-<rect x="2" y="2" width="996" height="288" rx="20" stroke="url(#edge)" stroke-opacity=".4" fill="none"/>
-<text x="36" y="37" font="700 14px Consolas,monospace" fill="#79E8FB" letter-spacing="2">BUILD PIPELINE</text>
-<rect x="187" y="23" width="57" height="20" rx="10" fill="#1D403F" stroke="#2E988C"/>
-<circle cx="201" cy="33" r="3.5" fill="#64EDC4" class="ping"/><text x="210" y="37" fill="#72E8CB" font="11px Consolas,monospace">LIVE</text>
-<text x="962" y="36" text-anchor="end" font="12px Consolas,monospace" fill="#849CB8">IDEIA / CÓDIGO / ENTREGA</text>
-<path d="M248 146H274M487 146H513M726 146H752" class="lane"/>
-<circle cx="249" cy="146" r="4.5" fill="#57DFF7" class="a"/><circle cx="488" cy="146" r="4.5" fill="#A28EFF" class="b"/><circle cx="727" cy="146" r="4.5" fill="#66F0C8" class="c"/>
-<g>
-<rect x="35" y="70" width="213" height="169" rx="16" class="panel pulse"/>
-<rect x="52" y="88" width="42" height="25" rx="8" fill="#193A4E"/><text x="65" y="105" class="num" fill="#79EDFA">01</text>
-<g stroke="#57DFF7" stroke-width="2.5" fill="none"><path d="M188 93L198 103L188 113" class="scan"/><circle cx="182" cy="103" r="15" stroke-opacity=".65"/><circle cx="182" cy="103" r="5" fill="#57DFF7"/></g>
-<text x="54" y="149" class="head">DESCOBERTA</text><text x="54" y="175" class="info">Problema e requisitos</text><text x="54" y="195" class="info">transformados em plano</text>
-<path d="M54 220H91" stroke="#57DFF7" stroke-width="3" stroke-linecap="round"/><path d="M101 220H156" stroke="#29425A" stroke-width="3" stroke-linecap="round"/>
-</g>
-<g>
-<rect x="274" y="70" width="213" height="169" rx="16" class="panel pulse" style="animation-delay:-.7s"/>
-<rect x="291" y="88" width="42" height="25" rx="8" fill="#27304E"/><text x="304" y="105" class="num">02</text>
-<g stroke="#AB95FF" stroke-width="2.8" stroke-linecap="round" fill="none"><path d="M422 92l-9 11 9 11M449 92l9 11-9 11M440 88l-13 30" class="scan"/></g>
-<text x="293" y="149" class="head">BACKEND</text><text x="293" y="175" class="info">Java · Spring Boot</text><text x="293" y="195" class="info">APIs e regras de negócio</text>
-<path d="M293 220H345" stroke="#A18BFA" stroke-width="3" stroke-linecap="round"/><path d="M354 220H395" stroke="#29425A" stroke-width="3" stroke-linecap="round"/>
-</g>
-<g>
-<rect x="513" y="70" width="213" height="169" rx="16" class="panel pulse" style="animation-delay:-1.4s"/>
-<rect x="530" y="88" width="42" height="25" rx="8" fill="#34304D"/><text x="543" y="105" class="num">03</text>
-<rect x="664" y="91" width="36" height="27" rx="4" stroke="#83B9FF" stroke-width="2" fill="none" class="scan"/><path d="M670 99h24M679 111h13" stroke="#83B9FF" stroke-width="2"/>
-<text x="532" y="149" class="head">FRONTEND</text><text x="532" y="175" class="info">Angular · TypeScript</text><text x="532" y="195" class="info">Interfaces intuitivas</text>
-<path d="M532 220H590" stroke="#83B9FF" stroke-width="3" stroke-linecap="round"/><path d="M599 220H635" stroke="#29425A" stroke-width="3" stroke-linecap="round"/>
-</g>
-<g>
-<rect x="752" y="70" width="213" height="169" rx="16" class="panel pulse" style="animation-delay:-2.1s"/>
-<rect x="769" y="88" width="42" height="25" rx="8" fill="#1B3D40"/><text x="782" y="105" class="num">04</text>
-<circle cx="919" cy="103" r="16" stroke="#5BE7BD" stroke-width="2.8" fill="none" class="scan"/><path d="M909 103l7 7 13-15" stroke="#5BE7BD" stroke-width="2.8" fill="none"/>
-<text x="771" y="149" class="head">SOLUÇÃO</text><text x="771" y="175" class="info">Testar, evoluir, entregar</text><text x="771" y="195" class="info">software com propósito</text>
-<path d="M771 220H832" stroke="#5BE7BD" stroke-width="3" stroke-linecap="round"/><path d="M842 220H877" stroke="#29425A" stroke-width="3" stroke-linecap="round"/>
-</g>
-<text x="500" y="271" text-anchor="middle" font="12px Consolas,monospace" fill="#8DA8C3">DESENHAR IDEIAS → ESTRUTURAR SOLUÇÕES → CONSTRUIR EXPERIÊNCIAS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 332" width="1000" height="332" role="img" aria-label="Animação contínua do processo de criação: uma ideia acende, vira código Java e Angular, e se transforma em aplicativo concluído">
+  <title>Da ideia ao software — desenvolvimento em movimento</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090E1E"/>
+      <stop offset=".55" stop-color="#101D36"/>
+      <stop offset="1" stop-color="#11162D"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#39E4FF"/><stop offset=".51" stop-color="#9783FF"/><stop offset="1" stop-color="#5CF2BF"/>
+    </linearGradient>
+    <linearGradient id="editor" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1A2943"/><stop offset="1" stop-color="#10192E"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop stop-color="#44DFFD" stop-opacity=".33"/>
+      <stop offset="1" stop-color="#44DFFD" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1" fill="#84A6C8" opacity=".16"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1000" height="332" rx="22"/></clipPath>
+  </defs>
+  <style>
+    .float{animation:float 4s ease-in-out infinite alternate}
+    .halo{animation:breath 2.5s ease-in-out infinite alternate}
+    .rays{animation:breath 1.8s ease-in-out infinite alternate}
+    .orb{animation:spin 15s linear infinite;transform-origin:150px 166px}
+    .beam{stroke-dasharray:5 11;animation:flow 2.2s linear infinite}
+    .stream1{animation:stream1 3.8s linear infinite}
+    .stream2{animation:stream2 3.8s linear infinite -.9s}
+    .stream3{animation:stream3 3.8s linear infinite}
+    .stream4{animation:stream4 3.8s linear infinite -1.1s}
+    .reveal1{animation:reveal1 6s linear infinite}
+    .reveal2{animation:reveal2 6s linear infinite}
+    .reveal3{animation:reveal3 6s linear infinite}
+    .cursor{animation:blink 1s steps(2,end) infinite}
+    .deploy{animation:deploy 6s ease-in-out infinite}
+    .status{animation:status 6s ease-in-out infinite}
+    .shine{animation:shine 6s ease-in-out infinite}
+    .bar1{animation:bar1 6s ease-in-out infinite;transform-origin:795px 191px}
+    .bar2{animation:bar2 6s ease-in-out infinite;transform-origin:795px 191px}
+    .ring{animation:ring 2.8s ease-out infinite;transform-origin:878px 123px}
+    @keyframes float{to{transform:translateY(-7px)}}
+    @keyframes breath{to{opacity:.42}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes flow{to{stroke-dashoffset:-64}}
+    @keyframes stream1{0%{transform:translateX(0);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:translateX(75px);opacity:0}}
+    @keyframes stream2{0%{transform:translateX(0);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:translateX(75px);opacity:0}}
+    @keyframes stream3{0%{transform:translateX(0);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:translateX(77px);opacity:0}}
+    @keyframes stream4{0%{transform:translateX(0);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:translateX(77px);opacity:0}}
+    @keyframes reveal1{0%,6%{opacity:0}14%,91%{opacity:1}98%,100%{opacity:0}}
+    @keyframes reveal2{0%,20%{opacity:0}30%,91%{opacity:1}98%,100%{opacity:0}}
+    @keyframes reveal3{0%,38%{opacity:0}49%,91%{opacity:1}98%,100%{opacity:0}}
+    @keyframes blink{50%{opacity:0}}
+    @keyframes deploy{0%,48%{opacity:.15;transform:translateY(6px)}67%,91%{opacity:1;transform:translateY(0)}100%{opacity:.15}}
+    @keyframes status{0%,52%{opacity:.2}66%,94%{opacity:1}100%{opacity:.2}}
+    @keyframes shine{0%,60%{opacity:0;transform:translateX(-50px)}80%{opacity:.8}100%{opacity:0;transform:translateX(180px)}}
+    @keyframes bar1{0%,18%{transform:scaleX(.22)}60%,100%{transform:scaleX(1)}}
+    @keyframes bar2{0%,28%{transform:scaleX(.14)}70%,100%{transform:scaleX(1)}}
+    @keyframes ring{0%{transform:scale(.55);opacity:.75}100%{transform:scale(1.65);opacity:0}}
+    @media (prefers-reduced-motion:reduce) {
+      .float,.halo,.rays,.orb,.beam,.stream1,.stream2,.stream3,.stream4,.reveal1,.reveal2,.reveal3,.cursor,.deploy,.status,.shine,.bar1,.bar2,.ring{animation:none!important}
+      .beam{stroke-dasharray:none}.reveal1,.reveal2,.reveal3,.status,.deploy{opacity:1!important}
+    }
+  </style>
+  <g clip-path="url(#frame)">
+    <rect width="1000" height="332" fill="url(#bg)"/>
+    <rect width="1000" height="332" fill="url(#dots)"/>
+    <path d="M-10 270C190 210 232 323 456 280S740 340 1020 238" fill="none" stroke="#75A0D1" stroke-opacity=".10" stroke-width="2"/>
+    <path d="M0 286C187 224 242 330 465 289S748 350 1020 252" fill="none" stroke="#927CFA" stroke-opacity=".12"/>
+    <rect x="2" y="2" width="996" height="328" rx="20" fill="none" stroke="url(#accent)" stroke-opacity=".45" stroke-width="1.5"/>
+
+    <circle cx="31" cy="30" r="4" fill="#55EEBD" class="halo"/>
+    <text x="46" y="35" fill="#8AE9FA" font-family="Consolas,monospace" font-size="13" letter-spacing="1.7">CONCEBER  /  CONSTRUIR  /  ENTREGAR</text>
+    <text x="965" y="35" text-anchor="end" fill="#87A5C5" font-family="Consolas,monospace" font-size="12">FULL STACK • EM MOVIMENTO</text>
+
+    <!-- Ideia: lâmpada luminosa com órbita e partículas -->
+    <circle cx="150" cy="165" r="107" fill="url(#halo)" class="halo"/>
+    <circle cx="150" cy="165" r="72" stroke="#4BCCE9" stroke-opacity=".24" stroke-width="1.4" fill="none" stroke-dasharray="6 13" class="orb"/>
+    <circle cx="150" cy="165" r="54" fill="#15273C" fill-opacity=".68" stroke="#63C7F0" stroke-opacity=".34" stroke-width="1.6" class="float"/>
+    <g stroke="#79E9FF" stroke-linecap="round" class="rays">
+      <path d="M150 95v-12M100 112l-9-9M200 112l9-9M79 165H66M221 165h13" stroke-width="3"/>
+    </g>
+    <g class="float">
+      <path d="M129 154a23 23 0 1 1 42 13c-5 7-8 12-8 18h-26c0-6-3-11-8-18a23 23 0 0 1 10-38" fill="#FFE39B" fill-opacity=".18" stroke="#FFDD82" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M140 187h20M142 193h16M145 199h10" stroke="#FFE099" stroke-width="3" stroke-linecap="round"/>
+      <path d="M144 177l-5-11 11 5 11-5-5 11" stroke="#FFF0B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+    <circle cx="209" cy="110" r="4" fill="#50E7F4" class="halo"/>
+    <circle cx="83" cy="216" r="3" fill="#B8A1FF" class="halo"/>
+    <text x="150" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="800" fill="#F1F7FF">01 · IDEIA</text>
+    <text x="150" y="274" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#A3B7CD">Entender o problema</text>
+
+    <!-- Conexão: luzes de dados seguindo o caminho -->
+    <path d="M241 159H330" stroke="#2C6E98" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+    <path d="M241 159H330" class="beam" stroke="#6DE8FF" stroke-width="2" fill="none"/>
+    <circle cx="247" cy="159" r="6" fill="#77ECFF" class="stream1"/>
+    <circle cx="247" cy="159" r="3" fill="#B69CFF" class="stream2"/>
+
+    <!-- Construção: editor de código no centro, linhas surgindo em sequência -->
+    <g class="float">
+      <rect x="330" y="71" width="355" height="208" rx="15" fill="url(#editor)" stroke="#6383AC" stroke-opacity=".86" stroke-width="1.4"/>
+      <rect x="330" y="71" width="355" height="33" rx="15" fill="#25344E"/>
+      <rect x="330" y="90" width="355" height="14" fill="#25344E"/>
+      <circle cx="349" cy="87" r="4.3" fill="#FB7F91"/><circle cx="365" cy="87" r="4.3" fill="#F9CF79"/><circle cx="381" cy="87" r="4.3" fill="#6AE6C0"/>
+      <text x="420" y="91" font-family="Consolas,monospace" font-size="12" fill="#AEBDD6">Solution.java</text>
+      <rect x="592" y="78" width="80" height="17" rx="8" fill="#19443F"/>
+      <circle cx="605" cy="86" r="3" fill="#6AF2C5" class="halo"/>
+      <text x="615" y="90" font-family="Consolas,monospace" font-size="10.5" fill="#8FECCC">BUILD</text>
+      <g font-family="Consolas,monospace" font-size="15">
+        <text x="351" y="133" fill="#7089AE">01</text>
+        <g class="reveal1"><text x="387" y="133"><tspan fill="#A99BFF">class </tspan><tspan fill="#F4D2A2">Solution</tspan><tspan fill="#DBE8F6"> {</tspan></text></g>
+        <text x="351" y="164" fill="#7089AE">02</text>
+        <g class="reveal2"><text x="403" y="164"><tspan fill="#6BDCF4">build</tspan><tspan fill="#CBDDEE">(idea) {</tspan></text></g>
+        <text x="351" y="195" fill="#7089AE">03</text>
+        <g class="reveal3"><text x="419" y="195"><tspan fill="#A99BFF">return </tspan><tspan fill="#6BECBF">software;</tspan></text></g>
+        <text x="351" y="226" fill="#7089AE">04</text>
+        <g class="reveal3"><text x="403" y="226" fill="#DBE8F6">}</text></g>
+        <text x="351" y="257" fill="#7089AE">05</text>
+        <g class="reveal3"><text x="387" y="257" fill="#DBE8F6">}</text><rect x="404" y="244" width="8" height="16" rx="1" fill="#75E7D3" class="cursor"/></g>
+      </g>
+    </g>
+    <rect x="426" y="284" width="168" height="21" rx="10" fill="#172C3E"/>
+    <text x="510" y="299" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#7BDEF7">JAVA + SPRING + ANGULAR</text>
+
+    <!-- Conexão de deploy -->
+    <path d="M687 159H770" stroke="#25566F" stroke-width="5" stroke-linecap="round" opacity=".4"/>
+    <path d="M687 159H770" class="beam" stroke="#77ECCD" stroke-width="2" fill="none"/>
+    <circle cx="691" cy="159" r="6" fill="#5EF2BE" class="stream3"/>
+    <circle cx="691" cy="159" r="3" fill="#A999F9" class="stream4"/>
+
+    <!-- Entrega: app que se constrói e recebe check de sucesso -->
+    <g class="deploy">
+      <rect x="767" y="89" width="173" height="144" rx="13" fill="#1D3047" stroke="#65D8CF" stroke-width="1.6"/>
+      <rect x="767" y="89" width="173" height="26" rx="13" fill="#29435A"/>
+      <rect x="767" y="104" width="173" height="11" fill="#29435A"/>
+      <circle cx="781" cy="102" r="3.5" fill="#76D9FF"/>
+      <circle cx="793" cy="102" r="3.5" fill="#A18AFF"/>
+      <rect x="782" y="126" width="50" height="89" rx="5" fill="#1A3E55"/>
+      <path d="M791 141h32M791 152h24M791 163h30" stroke="#6CACC7" stroke-width="3" stroke-linecap="round"/>
+      <rect x="844" y="129" width="80" height="43" rx="6" fill="#224F5C"/>
+      <path d="M854 161l17-13 14 6 23-16" fill="none" stroke="#5FEBC2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="845" y="184" width="78" height="7" rx="3.5" fill="#233F55"/>
+      <rect x="845" y="184" width="71" height="7" rx="3.5" fill="#69DFF2" class="bar1"/>
+      <rect x="845" y="199" width="78" height="7" rx="3.5" fill="#233F55"/>
+      <rect x="845" y="199" width="55" height="7" rx="3.5" fill="#AC98FD" class="bar2"/>
+      <rect x="690" y="95" width="46" height="8" fill="#4EEDD1" opacity=".1" transform="skewX(-23)" class="shine"/>
+    </g>
+    <circle cx="924" cy="113" r="22" fill="#163D41" stroke="#61E8BF" stroke-width="2.4" class="status"/>
+    <circle cx="924" cy="113" r="20" fill="none" stroke="#61E8BF" stroke-width="2" class="ring"/>
+    <path d="M914 113l7 7 13-15" fill="none" stroke="#74F5CE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="status"/>
+    <text x="853" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="800" fill="#EFFAF6">03 · ENTREGA</text>
+    <text x="853" y="274" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#A4BECE">Uma solução funcionando</text>
+
+    <text x="500" y="322" text-anchor="middle" font-family="Consolas,monospace" font-size="10" letter-spacing="1.2" fill="#7491AD">INSPIRAÇÃO  →  ARQUITETURA + CÓDIGO  →  EXPERIÊNCIA REAL</text>
+  </g>
 </svg>
