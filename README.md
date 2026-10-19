@@ -75,10 +75,10 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
       <a href="https://github.com/WalterMatheusgg/NEXUS"><strong>Explorar o projeto →</strong></a>
     </td>
     <td width="50%" align="center" valign="top">
-      <a href="https://github.com/WalterMatheusgg/Sistema-Bancario-Empresarial"><img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/bank-card.svg" width="100%" alt="Projeto Sistema Bancário Empresarial"/></a>
-      <p><strong>API bancária empresarial</strong></p>
-      <p>Java, Spring Boot e PostgreSQL com transferências transacionais, idempotência e ledger contábil.</p>
-      <a href="https://github.com/WalterMatheusgg/Sistema-Bancario-Empresarial"><strong>Explorar o projeto →</strong></a>
+      <a href="https://github.com/WalterMatheusgg/Sistema-Bancario-Empresarial"><img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/bank-card.svg" width="100%" alt="Vértice Bank — Sistema Bancário Empresarial"/></a>
+      <p><strong>Vértice Bank · Sistema Bancário Empresarial</strong></p>
+      <p>Java 21, Spring Boot e PostgreSQL. Painel web, contas, transferências, idempotência e ledger contábil.</p>
+      <a href="https://github.com/WalterMatheusgg/Sistema-Bancario-Empresarial"><strong>Explorar o Vértice Bank →</strong></a>
     </td>
   </tr>
 </table>
