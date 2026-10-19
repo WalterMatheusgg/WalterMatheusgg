@@ -51,7 +51,7 @@ def enhance(source: Path) -> int:
 
     count = min(MAX_DOTS, len(candidates))
     indices = [round(i * (len(candidates) - 1) / (count - 1)) for i in range(count)]
-    dark = "--ce:#161b22" in original
+    dark = "--ce:#161b22" in original.lower()
     palette = ("#55DFFF", "#8B83FF", "#22D3A6") if dark else ("#087EAA", "#6742B9", "#0B9773")
     css_parts = ["/* decorative-snake-snack: animated visual food (not contributions) */"]
 
