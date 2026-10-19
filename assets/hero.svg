@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" width="1000" height="320" role="img" aria-label="Walter Matheus, desenvolvedor Full Stack. Banner animado com terminal, circuitos e luzes em movimento.">
+<title>Walter Matheus — Criando soluções com código</title>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080D1B"/><stop offset=".56" stop-color="#101A35"/><stop offset="1" stop-color="#10152B"/></linearGradient>
+ <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4BEBFF"/><stop offset=".52" stop-color="#9F91FF"/><stop offset="1" stop-color="#53EBC9"/></linearGradient>
+ <linearGradient id="window" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172A44"/><stop offset="1" stop-color="#11172B"/></linearGradient>
+ <pattern id="grid" width="31" height="31" patternUnits="userSpaceOnUse"><path d="M31 0H0V31" fill="none" stroke="#6DA0C1" stroke-opacity=".09"/></pattern>
+ <clipPath id="clip"><rect width="1000" height="320" rx="22"/></clipPath>
+ <filter id="glow"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<style>
+ .outline{stroke:url(#neon);stroke-opacity:.32;stroke-width:1.5}
+ .float{animation:float 4.5s ease-in-out infinite alternate}
+ .soft{animation:breathe 3s ease-in-out infinite alternate}
+ .shimmer{animation:slide 7s ease-in-out infinite}
+ .cursor{animation:blink 1.05s steps(2,end) infinite}
+ .l1{animation:appear 7s ease-in-out infinite}
+ .l2{animation:appear 7s ease-in-out -1.1s infinite}
+ .l3{animation:appear 7s ease-in-out -2.2s infinite}
+ .orbit{animation:rotate 17s linear infinite;transform-origin:820px 156px}
+ .orbit2{animation:rotate 25s linear infinite reverse;transform-origin:820px 156px}
+ .dot{animation:breathe 2.3s ease-in-out infinite alternate}
+ @keyframes float{to{transform:translateY(-9px)}}
+ @keyframes breathe{to{opacity:.42}}
+ @keyframes blink{50%{opacity:0}}
+ @keyframes appear{0%,7%{opacity:0}17%,85%{opacity:1}96%,100%{opacity:0}}
+ @keyframes rotate{to{transform:rotate(360deg)}}
+ @keyframes slide{0%,100%{transform:translateX(-130px);opacity:0}45%{opacity:.5}70%{transform:translateX(1100px);opacity:0}}
+ @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g clip-path="url(#clip)">
+ <rect width="1000" height="320" fill="url(#bg)"/><rect width="1000" height="320" fill="url(#grid)"/>
+ <path d="M-40 265C145 175 205 360 428 235S808 240 1050 36" stroke="#259FE6" stroke-opacity=".18" stroke-width="2" fill="none"/>
+ <path d="M-15 282C183 186 255 375 452 251S786 267 1030 57" stroke="#9177FD" stroke-opacity=".2" stroke-width="1.5" fill="none"/>
+ <rect x="-140" y="0" width="105" height="320" fill="#34D9F0" opacity=".07" transform="skewX(-22)" class="shimmer"/>
+ <circle cx="824" cy="160" r="155" stroke="#4DE7F4" stroke-opacity=".12" fill="none" stroke-dasharray="3 15" class="orbit"/>
+ <circle cx="824" cy="160" r="125" stroke="#9A87FF" stroke-opacity=".14" fill="none" stroke-dasharray="5 11" class="orbit2"/>
+ <circle cx="868" cy="34" r="5" fill="#62EAFC" opacity=".7" class="dot"/><circle cx="970" cy="248" r="3" fill="#AD91FF" class="dot"/>
+ <circle cx="50" cy="65" r="16" fill="#00D9FF" opacity=".13" filter="url(#glow)"/>
+ <rect x="17" y="17" width="966" height="286" rx="18" fill="none" class="outline"/>
+ <g class="soft"><circle cx="64" cy="53" r="4" fill="#4FEDD1"/><circle cx="64" cy="53" r="8" fill="none" stroke="#4FEDD1" stroke-opacity=".4"/></g>
+ <text x="79" y="58" font-family="ui-monospace,Consolas,monospace" font-size="12" letter-spacing="1.6" fill="#97E5E8">PORTFÓLIO // DEV MODE ON</text>
+ <text x="62" y="126" font-family="Arial,Helvetica,sans-serif" font-size="57" font-weight="800" fill="#EDF8FF" letter-spacing="-2">Walter Matheus</text>
+ <rect x="63" y="141" width="415" height="3" rx="2" fill="url(#neon)"/>
+ <text x="63" y="179" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#80E6FA" letter-spacing="3">FULL STACK DEVELOPER</text>
+ <text x="63" y="210" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#B4C9DD">Do backend à experiência de quem usa.</text>
+ <g font-family="Consolas,monospace" font-size="13" font-weight="600">
+  <rect x="63" y="241" width="108" height="32" rx="10" fill="#1D3446" stroke="#397B91"/><text x="81" y="262" fill="#66D9F4">JAVA 21</text>
+  <rect x="181" y="241" width="151" height="32" rx="10" fill="#1B3440" stroke="#3D8F77"/><text x="197" y="262" fill="#7BE3C3">SPRING BOOT</text>
+  <rect x="342" y="241" width="119" height="32" rx="10" fill="#302547" stroke="#7655AD"/><text x="359" y="262" fill="#C1A5FF">ANGULAR</text>
+ </g>
+ <g class="float">
+  <rect x="608" y="55" width="343" height="211" rx="16" fill="url(#window)" stroke="#54779E" stroke-opacity=".72"/>
+  <rect x="608" y="55" width="343" height="34" rx="16" fill="#1D2C46"/><rect x="608" y="72" width="343" height="17" fill="#1D2C46"/>
+  <circle cx="627" cy="73" r="4" fill="#FF748C"/><circle cx="641" cy="73" r="4" fill="#FFD879"/><circle cx="655" cy="73" r="4" fill="#6CF2C7"/>
+  <text x="688" y="78" font-family="Consolas,monospace" font-size="12" fill="#A2B6CD">walter@dev ~/workspace</text>
+  <g font-family="Consolas,monospace" font-size="14">
+   <text x="630" y="124" fill="#6DE8F6">$</text><text x="646" y="124" fill="#CEDBF1">code --build future</text>
+   <g class="l1"><text x="630" y="156" fill="#8C93FF">01</text><text x="664" y="156" fill="#D5E4F2">design(architecture)</text></g>
+   <g class="l2"><text x="630" y="185" fill="#8C93FF">02</text><text x="664" y="185" fill="#D5E4F2">develop(fullStack)</text></g>
+   <g class="l3"><text x="630" y="214" fill="#8C93FF">03</text><text x="664" y="214" fill="#6DE0B7">deliver(value)</text></g>
+   <text x="630" y="244" fill="#5BE8E6">&gt;_</text><rect x="664" y="232" width="9" height="15" fill="#67F5DD" class="cursor"/>
+  </g>
+ </g>
+</g>
+</svg>

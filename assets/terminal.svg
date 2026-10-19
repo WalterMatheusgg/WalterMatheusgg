@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 235" width="1000" height="235" role="img" aria-label="Terminal animado: criando arquitetura, construindo APIs e integrando interfaces">
+<title>Terminal de desenvolvimento</title>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101D34"/><stop offset="1" stop-color="#0B1223"/></linearGradient><linearGradient id="edge"><stop stop-color="#4BD8F6"/><stop offset=".58" stop-color="#9B83F6"/><stop offset="1" stop-color="#62EEC4"/></linearGradient></defs>
+<style>
+ .blink{animation:blink 1s steps(2,end) infinite}.l1{animation:a 9s linear infinite}.l2{animation:b 9s linear infinite}.l3{animation:c 9s linear infinite}.l4{animation:d 9s linear infinite}
+ .spark{animation:spark 3s ease-in-out infinite alternate}
+ @keyframes blink{50%{opacity:0}}
+ @keyframes a{0%,4%{opacity:0}10%,100%{opacity:1}}
+ @keyframes b{0%,24%{opacity:0}31%,100%{opacity:1}}
+ @keyframes c{0%,48%{opacity:0}55%,100%{opacity:1}}
+ @keyframes d{0%,70%{opacity:0}78%,100%{opacity:1}}
+ @keyframes spark{to{opacity:.2}}
+ @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="1000" height="235" rx="18" fill="url(#bg)"/>
+<rect x="2" y="2" width="996" height="231" rx="18" fill="none" stroke="url(#edge)" stroke-width="1.6" stroke-opacity=".58"/>
+<rect x="1" y="1" width="998" height="43" rx="18" fill="#1C2C49"/><rect x="1" y="25" width="998" height="19" fill="#1C2C49"/>
+<circle cx="26" cy="23" r="6" fill="#FB7482"/><circle cx="46" cy="23" r="6" fill="#FED87A"/><circle cx="66" cy="23" r="6" fill="#52ECC2"/>
+<text x="500" y="28" text-anchor="middle" font="14px Consolas,monospace" fill="#A5BFDB">walter@dev : ~/fullstack</text>
+<rect x="896" y="13" width="83" height="22" rx="11" fill="#173936"/><circle cx="913" cy="24" r="4" fill="#64EFBC" class="spark"/><text x="924" y="28" font="11px Consolas,monospace" fill="#65E8BD">ACTIVE</text>
+<g font-family="Consolas,'Liberation Mono',monospace" font-size="17">
+<text x="29" y="80" fill="#5EEBCC">$</text><text x="52" y="80" fill="#D9E8FF">dev --stack java,spring,angular --mode build</text>
+<g class="l1"><text x="29" y="112" fill="#7997B2">[01]</text><text x="91" y="112" fill="#A4EBFE">Planejando arquitetura e regras de negócio...</text></g>
+<g class="l2"><text x="29" y="143" fill="#7997B2">[02]</text><text x="91" y="143" fill="#C0B1FF">Construindo APIs REST e integrações...</text></g>
+<g class="l3"><text x="29" y="174" fill="#7997B2">[03]</text><text x="91" y="174" fill="#83D7FF">Conectando interfaces e experiências...</text></g>
+<g class="l4"><text x="29" y="207" fill="#60EDBC">[OK]</text><text x="91" y="207" fill="#60EDBC">Iterar. Aprender. Melhorar. Entregar.</text></g>
+<rect x="522" y="192" width="10" height="18" rx="2" fill="#65EBC6" class="blink"/>
+</g>
+</svg>
