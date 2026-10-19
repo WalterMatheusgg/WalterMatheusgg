@@ -31,6 +31,11 @@ jobs:
       - name: Add decorative snack dots to snake path
         run: python3 .github/scripts/enhance_snake.py dist/github-snake.svg dist/github-snake-dark.svg
 
+      - name: Generate historical journey (2024–2026)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/build_journey.py dist
+
       - name: Publish animated SVGs
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
