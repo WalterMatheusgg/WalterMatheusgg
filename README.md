@@ -177,7 +177,7 @@ Projetos selecionados para demonstrar **desenvolvimento Full Stack, APIs REST, m
 
 📘 **[Ver repositório e documentação →](https://github.com/WalterMatheusgg/Sistema_de_Auditoria-SIAUDI)**
 
-### 🛒 [E-commerce — Backend API](https://github.com/WalterMatheusgg/ecomerce)
+### 🛒 [Vitrine Digital — API de E-commerce](https://github.com/WalterMatheusgg/vitrine-digital-api)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
@@ -185,35 +185,36 @@ Projetos selecionados para demonstrar **desenvolvimento Full Stack, APIs REST, m
 
 API REST para gestão de categorias e produtos, com arquitetura **routes → controllers → services → repositories**, persistência Prisma, validação Zod e testes de integração com banco PostgreSQL isolado.
 
-📘 **[Ver implementação e testes →](https://github.com/WalterMatheusgg/ecomerce)**
+📘 **[Ver implementação e testes →](https://github.com/WalterMatheusgg/vitrine-digital-api)**
 
-### 🚚 [Jamef → Ploomes — Integração de APIs](https://github.com/WalterMatheusgg/Jamef_Ploomes_Tracking)
+### 🚚 [Jamef → Ploomes — Integração de APIs](https://github.com/WalterMatheusgg/ponte-logistica-jamef-ploomes)
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![REST API](https://img.shields.io/badge/REST-API-0F766E?style=flat-square)
 
 Automação de rastreamento logístico e atualização de informações de entrega entre Jamef e Ploomes, com transformação de eventos, logs, relatórios CSV e modo de simulação.
 
-📘 **[Ver integração e documentação →](https://github.com/WalterMatheusgg/Jamef_Ploomes_Tracking)**
+📘 **[Ver integração e documentação →](https://github.com/WalterMatheusgg/ponte-logistica-jamef-ploomes)**
 
 
 ### 📂 Outros projetos relevantes
 
 | Projeto | Tecnologias | O que demonstra |
 |---|---|---|
-| [**Biblioteca Digital — Library Service**](https://github.com/WalterMatheusgg/library-service/tree/develop) | Python · Django · SQLite · Bootstrap | CRUD de catálogo, autenticação e controle de empréstimos |\n| [**Sistema de Gestão Escolar**](https://github.com/WalterMatheusgg/Sistema_de_Gestao_Escolar) | Python · Tkinter · SQLite | Interface desktop, modelagem e persistência relacional |
-| [**Android — Catálogo e Agendamento**](https://github.com/WalterMatheusgg/Aplicativo_Android_de_Cadastro_e_Autenticao) | Kotlin · Android · SQLite | Telas mobile, navegação e banco local em protótipo |
-| [**Movie API**](https://github.com/WalterMatheusgg/py-movie-api) | Django · Django REST Framework | CRUD REST e serializers em projeto de estudo |
-| [**Taxi Service — Busca e Testes**](https://github.com/WalterMatheusgg/py-taxi-service-search-and-tests/tree/taxi-search-and-tests) | Django · SQLite | Views, consultas e testes em aplicação educacional |
+| [**Estante Digital — Biblioteca Online**](https://github.com/WalterMatheusgg/estante-digital/tree/develop) | Python · Django · SQLite · Bootstrap | CRUD de catálogo, autenticação e controle de empréstimos |
+| [**Diário Escolar — Gestão Acadêmica**](https://github.com/WalterMatheusgg/diario-escolar) | Python · Tkinter · SQLite | Interface desktop, modelagem e persistência relacional |
+| [**Cadastro Mobile — Aplicativo Android**](https://github.com/WalterMatheusgg/cadastro-mobile) | Kotlin · Android · SQLite | Telas mobile, navegação e banco local em protótipo |
+| [**Catálogo de Filmes — API REST**](https://github.com/WalterMatheusgg/catalogo-de-filmes-api) | Django · Django REST Framework | CRUD REST e serializers em projeto de estudo |
+| [**Central de Táxis — Buscas e Testes**](https://github.com/WalterMatheusgg/central-de-taxis-buscas/tree/taxi-search-and-tests) | Django · SQLite | Views, consultas e testes em aplicação educacional |
 | [**Licits**](https://github.com/WalterMatheusgg/Licits) | Pacote ZIP | Projeto disponibilizado como arquivo; código ainda não navegável no GitHub |
 | [**Qubits**](https://github.com/WalterMatheusgg/Qubits) | Q# · Microsoft Quantum | Experimento introdutório com circuito quântico |
 
 <details>
 <summary><strong>🧩 Exercícios e fundamentos de programação</strong></summary>
 
-- [Exercícios Java](https://github.com/WalterMatheusgg/Projects_Java_Aleatorios) — Swing, lógica e manipulação de arquivos.
-- [Scripts Python](https://github.com/WalterMatheusgg/Projects_Py_Aleatorios) — Flask, Pygame, JSON/CSV e automação.
-- [Cadastro Acadêmico CLI](https://github.com/WalterMatheusgg/Sistema_Cadastro_test) — aplicação educacional em Python.
+- [Exercícios Java](https://github.com/WalterMatheusgg/oficina-java) — Swing, lógica e manipulação de arquivos.
+- [Scripts Python](https://github.com/WalterMatheusgg/caixa-de-ferramentas) — Flask, Pygame, JSON/CSV e automação.
+- [Cadastro Acadêmico CLI](https://github.com/WalterMatheusgg/cadastro-no-terminal) — aplicação educacional em Python.
 
 </details>
 
