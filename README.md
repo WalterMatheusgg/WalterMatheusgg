@@ -5,7 +5,7 @@
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=210&color=0:0D1117,50:263C75,100:00B4D8&text=Walter%20Matheus&fontColor=FFFFFF&fontSize=48&fontAlignY=38&animation=twinkling&desc=Full%20Stack%20Developer&descAlignY=62&descSize=21" alt="Walter Matheus — Full Stack Developer" />
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3200&pause=1100&color=45C7E8&center=true&vCenter=true&repeat=true&width=730&height=60&lines=Java+21+%E2%80%A2+Spring+Boot+%E2%80%A2+Angular;Full+Stack+Development+%E2%80%A2+APIs+REST;Arquitetura+%E2%80%A2+Integra%C3%A7%C3%B5es+%E2%80%A2+Qualidade" alt="Animação com Java, Spring Boot, Angular e desenvolvimento Full Stack" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3200&pause=1100&color=45C7E8&center=true&vCenter=true&repeat=true&width=730&height=60&lines=Java+%E2%80%A2+Spring+Boot+%E2%80%A2+Angular;Full+Stack+Development+%E2%80%A2+APIs+REST;Arquitetura+%E2%80%A2+Integra%C3%A7%C3%B5es+%E2%80%A2+Qualidade" alt="Animação com Java, Spring Boot, Angular e desenvolvimento Full Stack" />
 </a>
 
 <p>
