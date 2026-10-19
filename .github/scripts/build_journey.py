@@ -56,132 +56,191 @@ def github_calendar() -> dict[int, dict[str, int]]:
 
 
 def render(history: dict[int, dict[str, int]], dark: bool) -> str:
-    """One compact 2024–2026 calendar; eat ONLY actual contribution days.
+    """Small real-contribution grid, with alternating shuffled snake routes.
 
-    The snake visits positive-count days in a seeded random order, grows a little
-    with each eaten square, and completely removes that square from the image.
-    Unvisited days and empty days remain visible. No fake contributions.
+    Pure SVG/CSS cannot generate true runtime randomness inside a GitHub README.
+    Instead, preload 20 different randomized rounds and regenerate them daily.
+    Every round starts AND ends at the same top-left corner, with no teleport.
+    Only positive-contribution squares are eaten; empty squares stay intact.
     """
     import math
     import random
 
     colors = (
-        ["#263348", "#124254", "#176D88", "#178FAA", "#05C5E8"]
+        ["#243148", "#134759", "#19768A", "#11A0B7", "#00D9FF"]
         if dark else
-        ["#E8EDF4", "#C8E9F3", "#91CEE4", "#47A8C8", "#1385AB"]
+        ["#E8EDF4", "#C9E7F1", "#8BCADD", "#48ABC8", "#087EA5"]
     )
-    bg = "#0D1117" if dark else "#FFFFFF"
-    body_color = "#00BBDD" if dark else "#087FA5"
-    head_color = "#70EAFF" if dark else "#006D99"
+    background = "#0D1117" if dark else "#FFFFFF"
+    head_color = "#5AE6FF" if dark else "#057BA8"
+    body_color = "#11BCD8" if dark else "#127FA3"
     today = datetime.now(timezone.utc).date()
-    records = sorted(
+    dates = sorted(
         (date.fromisoformat(day), count)
         for year in YEARS for day, count in history[year].items()
         if date.fromisoformat(day) <= today
     )
-    if not records:
-        raise ValueError("No GitHub contribution dates available")
+    if not dates:
+        raise ValueError("No real contribution dates available")
 
-    ncols, step, x0, y0 = 54, 10, 45, 16
-    duration = 28.5  # Same speed as the original, more compact snake.
-    squares = []
-    goals = []
-    for i, (day, count) in enumerate(records):
-        row, col = divmod(i, ncols)
-        x, y = x0 + col * step, y0 + row * step
-        intensity = 0 if count == 0 else 1 if count == 1 else 2 if count <= 3 else 3 if count <= 7 else 4
-        squares.append((x, y, colors[intensity], count > 0))
+    WIDTH, HEIGHT, COLS = 670, 112, 90
+    STEP, X0, Y0, TILE = 6.35, 42, 20, 5.0
+    HOME = (17.0, 17.0)
+    LAP_TIME = 28.5
+    LAPS = 20
+    DURATION = LAP_TIME * LAPS
+
+    base_cells = []
+    targets = []
+    for i, (day, count) in enumerate(dates):
+        row, col = divmod(i, COLS)
+        x, y = X0 + col * STEP, Y0 + row * STEP
+        level = 0 if count == 0 else 1 if count == 1 else 2 if count <= 3 else 3 if count <= 7 else 4
         if count > 0:
-            goals.append((i, x + 4, y + 4))
-
-    if len(goals) < 2:
-        raise ValueError("At least two actual contributed days are needed for a snake")
-    rng = random.Random(20242026 + int(today.strftime("%Y%m%d")))
-    rng.shuffle(goals)  # Actual contributions only; randomized on each daily rebuild.
-
-    waypoints = []
-    path_distance = 0.0
-    for index, x, y in goals:
-        if waypoints:
-            px, py = waypoints[-1][1:3]
-            path_distance += math.hypot(x - px, y - py)
-        waypoints.append((index, x, y, path_distance))
-    total_distance = path_distance
-    if total_distance == 0:
-        raise ValueError("Snake path cannot be zero length")
-
-    path = "M " + " L ".join(f"{x:.1f} {y:.1f}" for _, x, y, _ in waypoints)
-    gap = total_distance + 500
-    css = [
-        f".board{{fill:{bg}}}",
-        f".snake-body{{fill:none;stroke:{body_color};stroke-width:7.2;"
-        "stroke-linecap:round;stroke-linejoin:round}}",
-        f".snake-head{{fill:{head_color};filter:drop-shadow(0 0 2px {head_color})}}",
-        ".sq{shape-rendering:geometricPrecision}",
-        "@media (prefers-reduced-motion:reduce){.snake-body,.snake-head{"
-        "animation:none!important;opacity:0!important}.sq{animation:none!important;opacity:1!important}}",
-    ]
-
-    # Segment lengths and keyframe times follow actual path distance:
-    # the snake crosses empty cells but NEVER eats them.
-    move_keys = []
-    grow_keys = []
-    eaten_at = {}
-    for position, (square_index, x, y, travelled) in enumerate(waypoints):
-        p = travelled / total_distance * 99.8
-        length = min(travelled, 9.0 + (position + 1) * 2.4)
-        start = max(0.0, travelled - length)
-        move_keys.append(f"{p:.4f}%{{transform:translate({x:.1f}px,{y:.1f}px)}}")
-        grow_keys.append(
-            f"{p:.4f}%{{stroke-dasharray:{length:.1f}px {gap:.1f}px;"
-            f"stroke-dashoffset:{-start:.1f}px}}"
-        )
-        eaten_at[square_index] = p
-
-    move_keys.append(
-        f"100%{{transform:translate({waypoints[0][1]:.1f}px,"
-        f"{waypoints[0][2]:.1f}px)}}"
-    )
-    grow_keys.append(f"100%{{stroke-dasharray:0px {gap:.1f}px;stroke-dashoffset:0px}}")
-    css.extend([
-        f"@keyframes move{{{''.join(move_keys)}}}",
-        f"@keyframes grow{{{''.join(grow_keys)}}}",
-        f".snake-head{{animation:move {duration}s linear infinite}}",
-        f".snake-body{{animation:grow {duration}s linear infinite}}",
-    ])
-    tiles = []
-    for index, (x, y, color, has_contributions) in enumerate(squares):
-        tile_class = "sq"
-        if has_contributions:
-            p = eaten_at[index]
-            after = min(99.96, p + 0.055)
-            name = f"eat{index}"
-            css.append(
-                f"@keyframes {name}{{0%,{p:.4f}%{{opacity:1}}"
-                f"{after:.4f}%,99.97%{{opacity:0}}100%{{opacity:1}}}}"
-                f".{name}{{animation:{name} {duration}s linear infinite}}"
+            targets.append((i, x, y, colors[level]))
+        else:
+            base_cells.append(
+                f'<rect x="{x:.2f}" y="{y:.2f}" width="{TILE}" height="{TILE}" '
+                f'rx="1.2" fill="{colors[0]}"/>'
             )
-            tile_class += f" {name}"
-        tiles.append(
-            f'<rect class="{tile_class}" x="{x}" y="{y}" '
-            f'width="8" height="8" rx="2" fill="{color}"/>'
+    if not targets:
+        raise ValueError("No real contributed squares to animate")
+    seed = int(today.strftime("%Y%m%d"))
+    styles = [
+        f".panel{{fill:{background}}}",
+        f".body{{fill:none;stroke:{body_color};stroke-width:4.4;"
+        "stroke-linecap:round;stroke-linejoin:round}}",
+        f".head{{fill:{head_color}}}",
+        ".scene{opacity:0}.scene0{opacity:1}",
+        ".tile{shape-rendering:geometricPrecision}",
+        "@media (prefers-reduced-motion:reduce){"
+        ".scene{animation:none!important;opacity:0!important}"
+        ".scene0{opacity:1!important}"
+        ".head,.body{animation:none!important;opacity:0!important}"
+        ".tile{animation:none!important;opacity:1!important}}",
+    ]
+    scenes = []
+    prior_route = None
+    for lap in range(LAPS):
+        order = targets[:]
+        random.Random(seed * 131 + lap * 99991).shuffle(order)
+        if [x[0] for x in order] == prior_route:
+            order = order[1:] + order[:1]
+        prior_route = [x[0] for x in order]
+        pts = [(None, *HOME, None)] + [
+            (i, x + TILE / 2, y + TILE / 2, color)
+            for i, x, y, color in order
+        ] + [(None, *HOME, None)]
+        distances = [0.0]
+        for p1, p2 in zip(pts, pts[1:]):
+            distances.append(
+                distances[-1] + math.hypot(p2[1] - p1[1], p2[2] - p1[2])
+            )
+        total = distances[-1]
+        if total <= 0:
+            raise ValueError("Cannot animate an empty route")
+        # Travel from home to all targets and home over 97% of each lap.
+        # The final ~0.85 s is spent quietly resting in the same corner.
+        progress = [d / total * 97 for d in distances]
+        progress.append(100.0)
+        pts.append(pts[-1])
+        target_times = {
+            index: percentage for (index, *_), percentage in zip(pts, progress)
+            if index is not None
+        }
+        move_frames = []
+        body_frames = []
+        growing = 0
+        for (index, x, y, _), d, p in zip(pts, distances + [total], progress):
+            if index is not None:
+                growing += 1
+            travelled = d
+            # Compact snake, growing with each actual contribution eaten.
+            snake_length = min(travelled, 9.0 + growing * 1.15, 66.0)
+            tail = max(0.0, travelled - snake_length)
+            if p == 100.0:
+                snake_length = 0.0
+                tail = travelled
+            move_frames.append(
+                f"{p:.4f}%{{transform:translate({x:.2f}px,{y:.2f}px)}}"
+            )
+            # Four dash entries: invisible prefix, visible body, invisible rest.
+            body_frames.append(
+                f"{p:.4f}%{{stroke-dasharray:0px {tail:.2f}px "
+                f"{snake_length:.2f}px {total + 100:.2f}px}}"
+            )
+        styles.extend([
+            f"@keyframes move{lap}{{{''.join(move_frames)}}}",
+            f"@keyframes body{lap}{{{''.join(body_frames)}}}",
+            f".head{lap}{{animation:move{lap} {LAP_TIME}s linear infinite}}",
+            f".body{lap}{{animation:body{lap} {LAP_TIME}s linear infinite}}",
+        ])
+
+        beginning = lap / LAPS * 100
+        ending = (lap + 1) / LAPS * 100
+        epsilon = 0.0007
+        if lap == 0:
+            visibility = (
+                f"0%,{ending-epsilon:.4f}%{{opacity:1}}"
+                f"{ending+epsilon:.4f}%,100%{{opacity:0}}"
+            )
+        else:
+            visibility = (
+                f"0%,{beginning-epsilon:.4f}%{{opacity:0}}"
+                f"{beginning+epsilon:.4f}%,{ending-epsilon:.4f}%{{opacity:1}}"
+                + (f"{ending+epsilon:.4f}%,100%{{opacity:0}}"
+                   if lap < LAPS - 1 else "100%{opacity:0}")
+            )
+        styles.append(f"@keyframes scene{lap}{{{visibility}}}")
+        styles.append(
+            f".scene{lap}{{animation:scene{lap} {DURATION}s linear infinite}}"
         )
+
+        scene = [f'<g class="scene scene{lap}">']
+        for index, x, y, color in order:
+            t = target_times[index]
+            disappear = min(99.90, t + 0.075)
+            # Fully remove each colored square, leaving transparent space.
+            anim = f"eat{lap}_{index}"
+            styles.extend([
+                f"@keyframes {anim}{{0%,{t:.4f}%{{opacity:1}}"
+                f"{disappear:.4f}%,100%{{opacity:0}}}}",
+                f".{anim}{{animation:{anim} {LAP_TIME}s linear infinite}}",
+            ])
+            scene.append(
+                f'<rect class="tile {anim}" x="{x:.2f}" y="{y:.2f}" '
+                f'width="{TILE}" height="{TILE}" rx="1.2" fill="{color}"/>'
+            )
+        path = "M " + " L ".join(
+            f"{x:.2f} {y:.2f}" for _, x, y, _ in pts[:-1]
+        )
+        scene.append(
+            f'<path class="body body{lap}" d="{path}" '
+            f'stroke-dasharray="0 {total+100:.2f}" />'
+        )
+        scene.extend([
+            f'<g class="head head{lap}">',
+            '<rect x="-3.1" y="-3.1" width="6.2" height="6.2" rx="2.0"/>',
+            f'<circle cx="1.3" cy="-1.1" r=".6" fill="{background}"/>',
+            f'<circle cx="1.3" cy="1.1" r=".6" fill="{background}"/>',
+            '</g>',
+            '</g>',
+        ])
+        scenes.extend(scene)
+
     return "\n".join([
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" '
-        'width="640" height="230" role="img" '
-        'aria-label="Uma cobrinha rápida come em ordem aleatória só os quadrados com contribuições reais de 2024 a 2026">',
-        '<title>Cobrinha de contribuições de 2024 a 2026</title>',
-        '<style>', *css, '</style>',
-        '<rect class="board" width="640" height="230" rx="12"/>',
-        *tiles,
-        f'<path class="snake-body" d="{path}" stroke-dasharray="0 {gap:.1f}" stroke-dashoffset="0"/>',
-        '<g class="snake-head">',
-        '<rect x="-5" y="-5" width="10" height="10" rx="3"/>',
-        f'<circle cx="2.3" cy="-1.8" r="1.0" fill="{bg}"/>',
-        f'<circle cx="2.3" cy="1.8" r="1.0" fill="{bg}"/>',
-        '</g>',
-        '</svg>',
-    ]) + "\n"
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" '
+        f'width="{WIDTH}" height="{HEIGHT}" role="img" '
+        'aria-label="Cobrinha compacta de contribuições reais, rotas variadas e '
+        'retorno suave ao canto a cada rodada">',
+        '<title>Cobrinha animada de contribuições · 2024–2026</title>',
+        '<desc>Vinte rotas pré-embaralhadas alternam entre as rodadas; '
+        'cada percurso começa e termina no mesmo canto. Apenas dias com '
+        'contribuições são comidos.</desc>',
+        '<style>', *styles, '</style>',
+        f'<rect class="panel" width="{WIDTH}" height="{HEIGHT}" rx="10"/>',
+        *base_cells, *scenes, '</svg>', '',
+    ])
 
 
 def main() -> None:
