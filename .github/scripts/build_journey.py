@@ -56,122 +56,132 @@ def github_calendar() -> dict[int, dict[str, int]]:
 
 
 def render(history: dict[int, dict[str, int]], dark: bool) -> str:
-    """One continuous 2024–2026 board; the snake grows with every tile it eats.
+    """One compact 2024–2026 calendar; eat ONLY actual contribution days.
 
-    Source is always GitHub GraphQL, never synthetic contributions. Every visited
-    tile becomes transparent (the whole tile, not just a change of color).
+    The snake visits positive-count days in a seeded random order, grows a little
+    with each eaten square, and completely removes that square from the image.
+    Unvisited days and empty days remain visible. No fake contributions.
     """
-    bg = "#0D1117" if dark else "#FFFFFF"
-    fg = "#DFE9F8" if dark else "#26344C"
-    muted = "#91A8BC" if dark else "#657B8E"
+    import math
+    import random
+
     colors = (
         ["#263348", "#124254", "#176D88", "#178FAA", "#05C5E8"]
         if dark else
         ["#E8EDF4", "#C8E9F3", "#91CEE4", "#47A8C8", "#1385AB"]
     )
-    head_color = "#74E9FF" if dark else "#0679A5"
-    body_color = "#00BBDD" if dark else "#0B91B2"
-    dates = sorted(
-        (day, number) for year in YEARS for day, number in history[year].items()
-        if day <= datetime.now(timezone.utc).date().isoformat()
+    bg = "#0D1117" if dark else "#FFFFFF"
+    body_color = "#00BBDD" if dark else "#087FA5"
+    head_color = "#70EAFF" if dark else "#006D99"
+    today = datetime.now(timezone.utc).date()
+    records = sorted(
+        (date.fromisoformat(day), count)
+        for year in YEARS for day, count in history[year].items()
+        if date.fromisoformat(day) <= today
     )
-    if not dates:
-        raise RuntimeError("No real GitHub contribution dates")
-    if dates[0][0] != "2024-01-01":
-        raise RuntimeError("Incomplete contribution history: 2024 must start on January 1")
+    if not records:
+        raise ValueError("No GitHub contribution dates available")
 
-    cols, step, x0, y0 = 54, 14, 88, 93
-    duration = 156  # About 6.5 tiles per second: moderate and easy to follow.
-    positions = []
+    ncols, step, x0, y0 = 54, 10, 45, 16
+    duration = 28.5  # Same speed as the original, more compact snake.
+    squares = []
+    goals = []
+    for i, (day, count) in enumerate(records):
+        row, col = divmod(i, ncols)
+        x, y = x0 + col * step, y0 + row * step
+        intensity = 0 if count == 0 else 1 if count == 1 else 2 if count <= 3 else 3 if count <= 7 else 4
+        squares.append((x, y, colors[intensity], count > 0))
+        if count > 0:
+            goals.append((i, x + 4, y + 4))
+
+    if len(goals) < 2:
+        raise ValueError("At least two actual contributed days are needed for a snake")
+    rng = random.Random(20242026 + int(today.strftime("%Y%m%d")))
+    rng.shuffle(goals)  # Actual contributions only; randomized on each daily rebuild.
+
+    waypoints = []
+    path_distance = 0.0
+    for index, x, y in goals:
+        if waypoints:
+            px, py = waypoints[-1][1:3]
+            path_distance += math.hypot(x - px, y - py)
+        waypoints.append((index, x, y, path_distance))
+    total_distance = path_distance
+    if total_distance == 0:
+        raise ValueError("Snake path cannot be zero length")
+
+    path = "M " + " L ".join(f"{x:.1f} {y:.1f}" for _, x, y, _ in waypoints)
+    gap = total_distance + 500
     css = [
         f".board{{fill:{bg}}}",
-        f".heading{{fill:{fg};font:700 22px system-ui,sans-serif;letter-spacing:.4px}}",
-        f".caption{{fill:{muted};font:13px system-ui,sans-serif}}",
-        ".tile{shape-rendering:geometricPrecision}",
-        ".body{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:10}",
-        f".body{{stroke:{body_color};filter:drop-shadow(0 0 2px {body_color})}}",
-        f".snake-head{{fill:{head_color};filter:drop-shadow(0 0 4px {head_color})}}",
-        "@media (prefers-reduced-motion:reduce){.body,.snake-head{animation:none!important;"
-        "opacity:0!important}.tile{animation:none!important;opacity:1!important}}",
+        f".snake-body{{fill:none;stroke:{body_color};stroke-width:7.2;"
+        "stroke-linecap:round;stroke-linejoin:round}}",
+        f".snake-head{{fill:{head_color};filter:drop-shadow(0 0 2px {head_color})}}",
+        ".sq{shape-rendering:geometricPrecision}",
+        "@media (prefers-reduced-motion:reduce){.snake-body,.snake-head{"
+        "animation:none!important;opacity:0!important}.sq{animation:none!important;opacity:1!important}}",
     ]
-    tiles = []
-    active = 0
-    n = len(dates)
-    for i, (day, amount) in enumerate(dates):
-        row, offset = divmod(i, cols)
-        col = offset if row % 2 == 0 else cols - 1 - offset
-        x, y = x0 + col * step, y0 + row * step
-        cx, cy = x + 5.5, y + 5.5
-        positions.append((cx, cy, amount > 0))
-        level = 0 if amount == 0 else 1 if amount == 1 else 2 if amount <= 3 else 3 if amount <= 7 else 4
-        # The rectangle vanishes completely as the snake's head reaches it.
-        t = (i + 0.35) * 100 / n
-        after = min(t + 0.035, 99.95)
-        key = f"e{i}"
-        css.append(
-            f"@keyframes {key}{{0%,{t:.3f}%{{opacity:1}}"
-            f"{after:.3f}%,99.97%{{opacity:0}}100%{{opacity:1}}}}"
-            f".{key}{{animation:{key} {duration}s linear infinite}}"
-        )
-        tiles.append(
-            f'<rect class="tile {key}" x="{x}" y="{y}" width="11" height="11" '
-            f'rx="2.6" fill="{colors[level]}"/>'
-        )
 
-    # Each day is adjacent to the next; the path crosses rows without jumping.
-    path = "M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y, _ in positions)
-    length = (n - 1) * step
-    gap = length + 240
-    path_animations = []
-    head_animations = []
-    for i, (cx, cy, has_activity) in enumerate(positions):
-        if has_activity:
-            active += 1
-        travelled = i * step
-        # The snake grows with EVERY eaten tile, plus a little extra on active days.
-        # Fractional growth keeps a 3-year animation readable rather than covering the board.
-        growth_in_cells = 3 + i * 0.075 + active * 0.45
-        body_length = min(travelled, growth_in_cells * step)
-        tail_start = travelled - body_length
-        percent = i * 100 / (n - 1)
-        head_animations.append(
-            f"{percent:.4f}%{{transform:translate({cx:.1f}px,{cy:.1f}px)}}"
+    # Segment lengths and keyframe times follow actual path distance:
+    # the snake crosses empty cells but NEVER eats them.
+    move_keys = []
+    grow_keys = []
+    eaten_at = {}
+    for position, (square_index, x, y, travelled) in enumerate(waypoints):
+        p = travelled / total_distance * 99.8
+        length = min(travelled, 9.0 + (position + 1) * 2.4)
+        start = max(0.0, travelled - length)
+        move_keys.append(f"{p:.4f}%{{transform:translate({x:.1f}px,{y:.1f}px)}}")
+        grow_keys.append(
+            f"{p:.4f}%{{stroke-dasharray:{length:.1f}px {gap:.1f}px;"
+            f"stroke-dashoffset:{-start:.1f}px}}"
         )
-        path_animations.append(
-            f"{percent:.4f}%{{stroke-dasharray:{body_length:.1f}px {gap}px;"
-            f"stroke-dashoffset:{-tail_start:.1f}px}}"
-        )
+        eaten_at[square_index] = p
 
+    move_keys.append(
+        f"100%{{transform:translate({waypoints[0][1]:.1f}px,"
+        f"{waypoints[0][2]:.1f}px)}}"
+    )
+    grow_keys.append(f"100%{{stroke-dasharray:0px {gap:.1f}px;stroke-dashoffset:0px}}")
     css.extend([
-        f"@keyframes follow{{{''.join(head_animations)}}}",
-        f"@keyframes grow{{{''.join(path_animations)}}}",
-        f".snake-head{{animation:follow {duration}s linear infinite}}",
-        f".body{{animation:grow {duration}s linear infinite}}",
+        f"@keyframes move{{{''.join(move_keys)}}}",
+        f"@keyframes grow{{{''.join(grow_keys)}}}",
+        f".snake-head{{animation:move {duration}s linear infinite}}",
+        f".snake-body{{animation:grow {duration}s linear infinite}}",
     ])
-    markup = [
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 420" '
-        'width="930" height="420" role="img" '
-        'aria-label="Uma única cobrinha percorre as contribuições de 2024, 2025 e 2026; '
-        'os quadrados desaparecem e a cobra cresce conforme come">',
-        '<title>Minha jornada no código · 2024 — 2026</title>',
-        '<desc>Calendário contínuo de contribuições reais. A cobra come cada quadrado inteiro, '
-        'e seu corpo cresce conforme come os dias.</desc>',
-        '<style>',
-        *css,
-        '</style>',
-        '<rect class="board" width="930" height="420" rx="18"/>',
-        '<text class="heading" x="28" y="42">MINHA JORNADA NO CÓDIGO</text>',
-        '<text class="caption" x="28" y="63">2024 — 2025 — 2026 · Um único caminho</text>',
+    tiles = []
+    for index, (x, y, color, has_contributions) in enumerate(squares):
+        tile_class = "sq"
+        if has_contributions:
+            p = eaten_at[index]
+            after = min(99.96, p + 0.055)
+            name = f"eat{index}"
+            css.append(
+                f"@keyframes {name}{{0%,{p:.4f}%{{opacity:1}}"
+                f"{after:.4f}%,99.97%{{opacity:0}}100%{{opacity:1}}}}"
+                f".{name}{{animation:{name} {duration}s linear infinite}}"
+            )
+            tile_class += f" {name}"
+        tiles.append(
+            f'<rect class="{tile_class}" x="{x}" y="{y}" '
+            f'width="8" height="8" rx="2" fill="{color}"/>'
+        )
+    return "\n".join([
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" '
+        'width="640" height="230" role="img" '
+        'aria-label="Uma cobrinha rápida come em ordem aleatória só os quadrados com contribuições reais de 2024 a 2026">',
+        '<title>Cobrinha de contribuições de 2024 a 2026</title>',
+        '<style>', *css, '</style>',
+        '<rect class="board" width="640" height="230" rx="12"/>',
         *tiles,
-        f'<path class="body" d="{path}" stroke-dasharray="0 {gap}" stroke-dashoffset="0"/>',
+        f'<path class="snake-body" d="{path}" stroke-dasharray="0 {gap:.1f}" stroke-dashoffset="0"/>',
         '<g class="snake-head">',
-        '<rect x="-7" y="-7" width="14" height="14" rx="4.5"/>',
-        f'<circle cx="3" cy="-2.5" r="1.3" fill="{bg}"/>',
-        f'<circle cx="3" cy="2.5" r="1.3" fill="{bg}"/>',
+        '<rect x="-5" y="-5" width="10" height="10" rx="3"/>',
+        f'<circle cx="2.3" cy="-1.8" r="1.0" fill="{bg}"/>',
+        f'<circle cx="2.3" cy="1.8" r="1.0" fill="{bg}"/>',
         '</g>',
         '</svg>',
-    ]
-    return "\n".join(markup) + "\n"
+    ]) + "\n"
 
 
 def main() -> None:
