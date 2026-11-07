@@ -15,6 +15,17 @@ from urllib.request import Request, urlopen
 YEARS = (2024, 2025, 2026)
 USER = "WalterMatheusgg"
 
+# Cartões de projetos recentes são referências de portfólio, não contribuições inventadas.
+# A ordem usa a atividade mais recente verificada nos repositórios em 07/11/2026.
+RECENT_PROJECTS = (
+    ("Loja Ferragens", "SistemaMercearia"),
+    ("Painel Terceirizados", "Painel-Terceirizados"),
+    ("Licits", "Licits"),
+    ("Vértice Bank", "Sistema-Bancario-Empresarial"),
+    ("NEXUS CRM", "NEXUS"),
+)
+
+
 
 def github_calendar() -> dict[int, dict[str, int]]:
     token = os.environ.get("GITHUB_TOKEN")
@@ -94,7 +105,7 @@ def render(history: dict[int, dict[str, int]], dark: bool, seed: int) -> str:
                 raise ValueError(f"Unexpected week index {week}: {date_str}")
             merged[(week, weekday)] += count
 
-    WIDTH, HEIGHT = 830, 130
+    WIDTH, HEIGHT = 830, 214
     STEP, TILE = 14.0, 11.0
     X0, Y0 = 55.0, 19.0
     HOME = (20.0, 20.0)
@@ -235,19 +246,46 @@ def render(history: dict[int, dict[str, int]], dark: bool, seed: int) -> str:
         ])
         scenes += scene
 
+    # Um rodapé visual separa a atividade do GitHub dos links dos projetos.
+    # Não altera o calendário, as quantidades ou o trajeto da cobrinha.
+    panel = "#EAF6FA" if not dark else "#14283A"
+    border = "#B2D7E4" if not dark else "#375E79"
+    foreground = "#17516A" if not dark else "#E6F6FF"
+    muted = "#527B91" if not dark else "#9BCBE0"
+    project_strip = [
+        f'<path d="M 24 133 H 806" stroke="{border}" stroke-width="1" opacity=".7"/>',
+        f'<text x="28" y="150" font-family="Arial, sans-serif" font-size="11" '
+        f'font-weight="700" letter-spacing="1" fill="{muted}">'
+        'PROJETOS RECENTES · PORTFÓLIO</text>',
+    ]
+    for index, (label, repository) in enumerate(RECENT_PROJECTS):
+        x = 27 + index * 159
+        url = f"https://github.com/{USER}/{repository}"
+        project_strip.extend([
+            f'<a href="{url}" aria-label="Abrir {label} no GitHub">',
+            f'<title>{label} · Repositório GitHub</title>',
+            f'<rect x="{x}" y="161" width="146" height="36" rx="9" '
+            f'fill="{panel}" stroke="{border}"/>',
+            f'<text x="{x + 73}" y="183.5" text-anchor="middle" '
+            f'font-family="Arial, sans-serif" font-size="11.3" '
+            f'font-weight="700" fill="{foreground}">{label}</text>',
+            '</a>',
+        ])
+
     return "\n".join([
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'viewBox="0 0 {WIDTH} {HEIGHT}" width="{WIDTH}" height="{HEIGHT}" '
         f'role="img" aria-label="Grade GitHub com exatamente sete linhas: '
         f'contribuições de 2024, 2025 e 2026 reunidas em uma única visualização '
-        f'e uma cobrinha que come apenas os dias com atividade">',
-        '<title>Cobrinha: três anos reunidos em sete linhas</title>',
+        f'e uma cobrinha que come apenas os dias com atividade e mostra projetos recentes">',
+        '<title>Cobrinha: contribuições de 2024 a 2026 e projetos recentes</title>',
         '<desc>A atividade real dos três anos foi agregada pelo dia da semana e '
         'semana do ano. A cobrinha escolhe novas rotas predefinidas em cada '
-        'rodada e retorna ao canto sem saltos.</desc>',
+        'rodada e retorna ao canto sem saltos. Abaixo, links de projetos recentes '
+        'não alteram a contagem de contribuições.</desc>',
         '<style>', *styles, '</style>',
         f'<rect class="background" width="{WIDTH}" height="{HEIGHT}" rx="9"/>',
-        *blank_cells, *scenes, '</svg>', '',
+        *blank_cells, *scenes, *project_strip, '</svg>', '',
     ])
 
 
