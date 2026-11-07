@@ -96,9 +96,9 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" />
-  <img width="830" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg" alt="Cobrinha animada em um calendário de sete linhas, unindo contribuições de 2024 a 2026" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026-dark.svg?v=20261107-c97b6e3" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg?v=20261107-c97b6e3" />
+  <img width="830" src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/output/journey-2024-2026.svg?v=20261107-c97b6e3" alt="Cobrinha animada em um calendário de sete linhas, unindo contribuições de 2024 a 2026" />
 </picture>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:0D1117,50:263C75,100:00B4D8" alt="Rodapé em forma de onda" />
