@@ -88,10 +88,17 @@ def render(history: dict[int, dict[str, int]], dark: bool, seed: int) -> str:
     snake_color = "#4EE1FC" if dark else "#1684B0"
     body_color = "#21C4E1" if dark else "#268FAF"
 
-    # Align each calendar to Sunday -> Saturday, aggregate 2024/25/26 by
-    # week-of-year and weekday. Exactly 7 rows, 53 columns.
+    # Keep the historical 2024–2026 overlay and the original seven-row style.
+    # The current week must be the RIGHTMOST column (52), not week 44 in
+    # November: otherwise the newest real contributions look "missing".
     merged = {(week, weekday): 0 for week in range(53) for weekday in range(7)}
     today = datetime.now(timezone.utc).date()
+    first_current = date(today.year, 1, 1)
+    current_first_sunday = first_current - timedelta(
+        days=(first_current.weekday() + 1) % 7
+    )
+    current_week = (today - current_first_sunday).days // 7
+
     for year in YEARS:
         first = date(year, 1, 1)
         first_sunday = first - timedelta(days=(first.weekday() + 1) % 7)
@@ -103,7 +110,21 @@ def render(history: dict[int, dict[str, int]], dark: bool, seed: int) -> str:
             weekday = (current.weekday() + 1) % 7
             if not (0 <= week < 53):
                 raise ValueError(f"Unexpected week index {week}: {date_str}")
-            merged[(week, weekday)] += count
+            display_week = (week + 52 - current_week) % 53
+            merged[(display_week, weekday)] += count
+
+    # For the most recent two weeks, show ONLY the actual calendar counts
+    # for the current year. A previous year's activity must never masquerade
+    # as a contribution made yesterday or today.
+    recent = history[today.year]
+    for days_ago in range(14):
+        actual_day = today - timedelta(days=days_ago)
+        if actual_day.year != today.year:
+            continue
+        week = (actual_day - current_first_sunday).days // 7
+        display_week = (week + 52 - current_week) % 53
+        weekday = (actual_day.weekday() + 1) % 7
+        merged[(display_week, weekday)] = recent.get(actual_day.isoformat(), 0)
 
     WIDTH, HEIGHT = 830, 214
     STEP, TILE = 14.0, 11.0
