@@ -68,13 +68,19 @@ Sou **Walter Matheus**, desenvolvedor **Full Stack**, com foco em **Java, Spring
 
 <table>
   <tr>
-    <td width="50%" align="center" valign="top">
+    <td width="33%" align="center" valign="top">
+      <a href="https://github.com/WalterMatheusgg/Licits"><img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/licits-card.svg" width="100%" alt="Licits — gestão e fiscalização de contratos"/></a>
+      <p><strong>Licits · Gestão e fiscalização de contratos</strong></p>
+      <p>Plataforma para acompanhar contratos, consumo, prazos, documentos, permissões e auditoria.</p>
+      <a href="https://github.com/WalterMatheusgg/Licits"><strong>Explorar o Licits →</strong></a>
+    </td>
+    <td width="33%" align="center" valign="top">
       <a href="https://github.com/WalterMatheusgg/NEXUS"><img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/nexus-card.svg" width="100%" alt="Projeto Nexus CRM"/></a>
       <p><strong>CRM empresarial Full Stack</strong></p>
       <p>Arquitetura modular, APIs REST, frontend Angular, autenticação e banco de dados Oracle.</p>
       <a href="https://github.com/WalterMatheusgg/NEXUS"><strong>Explorar o projeto →</strong></a>
     </td>
-    <td width="50%" align="center" valign="top">
+    <td width="33%" align="center" valign="top">
       <a href="https://github.com/WalterMatheusgg/Sistema-Bancario-Empresarial"><img src="https://raw.githubusercontent.com/WalterMatheusgg/WalterMatheusgg/main/assets/bank-card.svg" width="100%" alt="Vértice Bank — Sistema Bancário Empresarial"/></a>
       <p><strong>Vértice Bank · Sistema Bancário Empresarial</strong></p>
       <p>Java 21, Spring Boot e PostgreSQL. Painel web, contas, transferências, idempotência e ledger contábil.</p>
